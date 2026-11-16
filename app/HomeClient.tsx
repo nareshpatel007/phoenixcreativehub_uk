@@ -243,14 +243,18 @@ export default function HomeClient() {
             </section>
 
             {/* 2. CORE SERVICES SECTION */}
-            <section id="services" className="py-28 bg-white relative">
-                <div className="section-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <section id="services" className="py-28 bg-[#fbfdfa] relative overflow-hidden">
+                {/* Decorative background subtle glow */}
+                <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#9ACD32]/5 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#0B2921]/5 rounded-full blur-3xl pointer-events-none" />
+
+                <div className="section-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <InViewSection>
                         <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-                            <span className="inline-flex items-center gap-2 bg-[#9ACD32]/10 border border-[#9ACD32]/20 text-[#9ACD32] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
+                            <span className="inline-flex items-center gap-2 bg-[#9ACD32]/15 border border-[#9ACD32]/30 text-[#5a8014] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-sm">
                                 What We Deliver
                             </span>
-                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-[#111111] tracking-tight">
+                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-[#0B2921] tracking-tight">
                                 End-to-End IT Engineering Services
                             </h2>
                             <p className="text-slate-600 text-lg leading-relaxed">
@@ -260,49 +264,87 @@ export default function HomeClient() {
                     </InViewSection>
 
                     <InViewSection>
-                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                             {[
                                 {
                                     icon: Laptop,
                                     title: "Custom Software Development",
+                                    slug: "custom-software-development",
                                     desc: "Tailored web architectures and robust backend services engineered precisely for your business challenges.",
+                                    features: ["Enterprise Architecture", "High-Performance APIs", "Scalable Microservices"],
+                                    tag: "Custom Solutions"
                                 },
                                 {
                                     icon: Smartphone,
                                     title: "Web & Mobile Applications",
+                                    slug: "web-mobile-development",
                                     desc: "Stunning high-performance websites and native iOS & Android applications using Next.js and React Native.",
+                                    features: ["iOS & Android Native", "Next.js High Performance", "Responsive Web Apps"],
+                                    tag: "Mobile & Web"
                                 },
                                 {
                                     icon: Bot,
                                     title: "AI Automation & ML",
+                                    slug: "ai-automation-ml",
                                     desc: "Intelligent agents, predictive modeling, data scraping, and automation flows integrating the latest LLM models.",
+                                    features: ["Intelligent AI Agents", "Workflow Automation", "Predictive Analytics"],
+                                    tag: "AI & Automation"
                                 },
                                 {
                                     icon: Database,
                                     title: "CRM & ERP Systems",
+                                    slug: "crm-erp-systems",
                                     desc: "Streamlined operational workflows, customized administrative panels, and secure corporate management platforms.",
+                                    features: ["Workflow Automation", "Centralised Dashboards", "Role-Based Security"],
+                                    tag: "Enterprise Platforms"
                                 },
                             ].map((service, i) => (
                                 <motion.div
                                     key={i}
                                     variants={fadeUp}
-                                    className="group relative bg-white rounded-3xl border border-slate-100 p-8 flex flex-col justify-between h-full transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(26,36,86,0.06)] hover:border-[#9ACD32]/30 overflow-hidden"
+                                    className="group relative bg-white rounded-3xl border border-slate-200/80 p-7 flex flex-col justify-between h-full transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(11,41,33,0.08)] hover:border-[#9ACD32] overflow-hidden"
                                 >
-                                    <div className="absolute -right-8 -top-8 w-24 h-24 rounded-full bg-[#9ACD32]/5 blur-2xl group-hover:bg-[#9ACD32]/10 transition-all duration-300" />
+                                    {/* Top subtle corner gradient */}
+                                    <div className="absolute -right-8 -top-8 w-28 h-28 rounded-full bg-gradient-to-br from-[#9ACD32]/10 to-transparent blur-xl group-hover:scale-150 transition-transform duration-500 pointer-events-none" />
+
                                     <div>
-                                        <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mb-6 border border-slate-100 group-hover:border-[#9ACD32]/20 group-hover:scale-105 transition-all duration-300 text-primary">
-                                            <service.icon className="w-6 h-6" />
+                                        {/* Icon & Category Tag Header */}
+                                        <div className="flex items-center justify-between mb-6">
+                                            <div className="w-14 h-14 bg-[#0B2921]/5 group-hover:bg-[#0B2921] rounded-2xl flex items-center justify-center border border-[#0B2921]/10 group-hover:border-[#0B2921] group-hover:scale-105 transition-all duration-300 shadow-sm">
+                                                <service.icon className="w-7 h-7 text-[#0B2921] group-hover:text-[#9ACD32] transition-colors duration-300" />
+                                            </div>
+                                            <span className="text-[11px] font-semibold text-slate-500 bg-slate-100 group-hover:bg-[#9ACD32]/15 group-hover:text-[#5a8014] px-3 py-1 rounded-full transition-colors">
+                                                {service.tag}
+                                            </span>
                                         </div>
-                                        <h3 className="text-xl font-display font-bold text-[#111111] mb-3 group-hover:text-primary transition-colors duration-200">
+
+                                        <h3 className="text-xl font-display font-bold text-[#0B2921] mb-3 group-hover:text-[#173C30] transition-colors duration-200 leading-snug">
                                             {service.title}
                                         </h3>
                                         <p className="text-slate-600 text-sm leading-relaxed mb-6">
                                             {service.desc}
                                         </p>
+
+                                        {/* Bullet features for enhanced substance */}
+                                        <div className="space-y-2 mb-6 pt-4 border-t border-slate-100">
+                                            {service.features.map((feat, fIdx) => (
+                                                <div key={fIdx} className="flex items-center gap-2 text-xs text-slate-600 font-medium">
+                                                    <div className="w-1.5 h-1.5 rounded-full bg-[#9ACD32]" />
+                                                    <span>{feat}</span>
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
-                                    <span className="inline-flex items-center gap-1.5 text-xs font-bold text-primary group-hover:text-[#111111] transition-colors">
-                                        Request details <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                                    </span>
+
+                                    <Link
+                                        href={`/services/${service.slug}`}
+                                        className="inline-flex items-center justify-between w-full pt-4 border-t border-slate-100 text-xs font-bold text-[#0B2921] group-hover:text-[#5a8014] transition-colors"
+                                    >
+                                        <span>Request details</span>
+                                        <span className="w-7 h-7 rounded-full bg-slate-100 group-hover:bg-[#9ACD32] flex items-center justify-center text-[#0B2921] group-hover:text-[#0B2921] transition-all">
+                                            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+                                        </span>
+                                    </Link>
                                 </motion.div>
                             ))}
                         </div>
