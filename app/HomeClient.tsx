@@ -201,35 +201,39 @@ export default function HomeClient() {
                             </motion.div>
                         </motion.div>
 
-                        {/* Right Decorative Terminal Dashboard Mockup */}
+                        {/* Right Decorative Creative 3D Showcase */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95, y: 20 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.3 }}
                             className="lg:col-span-5 hidden lg:block"
                         >
-                            <div className="relative rounded-2xl border border-white/10 bg-slate-900/80 backdrop-blur-xl p-6 shadow-[0_0_60px_rgba(154,205,50,0.15)] overflow-hidden group">
-                                <div className="absolute inset-0 bg-gradient-to-tr from-[#9ACD32]/15 via-transparent pointer-events-none" />
-                                <div className="absolute -inset-1 bg-gradient-to-r from-[#9ACD32]/20 to-[#9ACD32]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                {/* Mac Window Dots */}
-                                <div className="flex items-center gap-1.5 mb-6 border-b border-white/5 pb-4">
-                                    <div className="w-3 h-3 rounded-full bg-rose-500" />
-                                    <div className="w-3 h-3 rounded-full bg-amber-500" />
-                                    <div className="w-3 h-3 rounded-full bg-emerald-500" />
-                                    <span className="text-xs text-slate-400 ml-2 font-mono">phoenix-creative-hub.sh</span>
-                                </div>
-                                <div className="font-mono text-xs space-y-3 text-slate-300">
-                                    <div className="text-[#9ACD32]"># Initializing custom software environment...</div>
-                                    <div>$ npm run build:production</div>
-                                    <div className="text-emerald-400">✔ Optimized production bundle compiled successfully</div>
-                                    <div>$ phoenix-hub deploy --target=cloud-production</div>
-                                    <div className="flex items-center gap-2 text-slate-400">
-                                        <div className="w-2.5 h-2.5 rounded-full bg-[#9ACD32] animate-ping" />
-                                        <span>Deploying to UK cluster regions (London E17)...</span>
-                                    </div>
-                                    <div className="pt-4 border-t border-white/5 mt-4 flex items-center justify-between text-[11px] text-slate-500">
-                                        <span>SYSTEM STATS: STABLE</span>
-                                        <span>LATENCY: 8ms</span>
+                            <div className="relative group">
+                                {/* Ambient back glow */}
+                                <div className="absolute -inset-4 bg-gradient-to-r from-[#9ACD32]/25 via-[#9ACD32]/10 to-[#9ACD32]/20 rounded-3xl blur-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
+                                {/* Container with creative image & overlay */}
+                                <div className="relative rounded-3xl border border-white/10 bg-slate-900/60 backdrop-blur-xl p-4 shadow-[0_20px_60px_rgba(0,0,0,0.5)] overflow-hidden">
+                                    <div className="relative h-[420px] w-full rounded-2xl overflow-hidden flex items-center justify-center">
+                                        <Image
+                                            src="/images/hero-creative.png"
+                                            alt="Phoenix Creative Hub UK Digital & App Development Solutions"
+                                            fill
+                                            className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                            priority
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[#0B2921]/90 via-transparent to-transparent pointer-events-none" />
+
+                                        {/* Floating Badge on Bottom */}
+                                        <div className="absolute bottom-4 left-4 right-4 bg-[#0B2921]/90 backdrop-blur-md border border-white/10 rounded-2xl p-3.5 flex items-center justify-between text-xs">
+                                            <div className="flex items-center gap-2.5">
+                                                <div className="w-2.5 h-2.5 rounded-full bg-[#9ACD32] animate-ping" />
+                                                <span className="font-bold text-white tracking-wide">SEO &bull; GEO &bull; AEO Ready</span>
+                                            </div>
+                                            <span className="text-[#9ACD32] font-semibold text-[11px] bg-[#9ACD32]/10 border border-[#9ACD32]/20 px-2.5 py-1 rounded-full">
+                                                London, UK 🇬🇧
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
