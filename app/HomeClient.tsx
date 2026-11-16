@@ -499,7 +499,7 @@ export default function HomeClient() {
                                 <div className="space-y-6">
                                     {[
                                         { icon: Phone, label: "Phone", value: "+44 7833 817034", href: "tel:+447833817034" },
-                                        { icon: Mail, label: "Email", value: "info@phoenixcreativehub.co.uk", href: "mailto:info@phoenixcreativehub.co.uk" },
+                                        { icon: Mail, label: "Email", value: "hello@phoenixcreativehub.co.uk", href: "mailto:hello@phoenixcreativehub.co.uk" },
                                         { icon: Globe, label: "Location", value: "Suite RA01, 195-197 Wood Street, London, E17 3NU, UK", href: "#" }
                                     ].map((contact, i) => (
                                         <div key={i} className="flex items-start gap-4">
@@ -542,14 +542,14 @@ export default function HomeClient() {
                                                     <FormField control={form.control} name="name" render={({ field }) => (
                                                         <FormItem>
                                                             <FormLabel className="text-xs font-semibold text-[#111111]/70 uppercase tracking-wide">Full Name *</FormLabel>
-                                                            <FormControl><Input placeholder="Rajesh Sharma" className="h-10 bg-slate-50/50 border-slate-100 rounded-xl" {...field} /></FormControl>
+                                                            <FormControl><Input placeholder="Enter your full name" className="h-10 bg-slate-50/50 border-slate-100 rounded-xl" {...field} /></FormControl>
                                                             <FormMessage />
                                                         </FormItem>
                                                     )} />
                                                     <FormField control={form.control} name="email" render={({ field }) => (
                                                         <FormItem>
                                                             <FormLabel className="text-xs font-semibold text-[#111111]/70 uppercase tracking-wide">Email Address *</FormLabel>
-                                                            <FormControl><Input type="email" placeholder="alex@example.co.uk" className="h-10 bg-slate-50/50 border-slate-100 rounded-xl" {...field} /></FormControl>
+                                                            <FormControl><Input type="email" placeholder="name@company.co.uk" className="h-10 bg-slate-50/50 border-slate-100 rounded-xl" {...field} /></FormControl>
                                                             <FormMessage />
                                                         </FormItem>
                                                     )} />
@@ -559,14 +559,14 @@ export default function HomeClient() {
                                                     <FormField control={form.control} name="phone" render={({ field }) => (
                                                         <FormItem>
                                                             <FormLabel className="text-xs font-semibold text-[#111111]/70 uppercase tracking-wide">Phone Number</FormLabel>
-                                                            <FormControl><Input placeholder="+44 7833 817034" className="h-10 bg-slate-50/50 border-slate-100 rounded-xl" {...field} /></FormControl>
+                                                            <FormControl><Input placeholder="e.g. +44 7833 817034" className="h-10 bg-slate-50/50 border-slate-100 rounded-xl" {...field} /></FormControl>
                                                             <FormMessage />
                                                         </FormItem>
                                                     )} />
                                                     <FormField control={form.control} name="company" render={({ field }) => (
                                                         <FormItem>
                                                             <FormLabel className="text-xs font-semibold text-[#111111]/70 uppercase tracking-wide">Company</FormLabel>
-                                                            <FormControl><Input placeholder="Acme Technologies" className="h-10 bg-slate-50/50 border-slate-100 rounded-xl" {...field} /></FormControl>
+                                                            <FormControl><Input placeholder="Your Company Name" className="h-10 bg-slate-50/50 border-slate-100 rounded-xl" {...field} /></FormControl>
                                                             <FormMessage />
                                                         </FormItem>
                                                     )} />

@@ -98,7 +98,7 @@ export default function Contact() {
                                     Partner with Phoenix Creative Hub UK for Custom Software
                                 </h2>
                                 <p className="text-sm text-slate-500 leading-relaxed">
-                                    Based in London, Gujarat, our engineers consult on React/Next.js client portals, secure API integrations, AWS automation, and enterprise database configurations.
+                                    Based in London, UK, our engineers consult on React/Next.js client portals, secure API integrations, AWS automation, and enterprise database configurations.
                                 </p>
                             </div>
 
@@ -124,11 +124,11 @@ export default function Contact() {
                                     <div>
                                         <h4 className="font-display font-bold text-[#111111] text-sm uppercase tracking-wide mb-1.5">Direct Inquiry</h4>
                                         <div className="space-y-1">
-                                            <a href="tel:+442079460912" className="block text-xs text-slate-650 hover:text-primary transition-colors font-semibold">
-                                                +91 95865 57162
+                                            <a href="tel:+447833817034" className="block text-xs text-slate-650 hover:text-primary transition-colors font-semibold">
+                                                +44 7833 817034
                                             </a>
-                                            <a href="mailto:info@phoenixcreativehub.co.uk" className="block text-xs text-slate-650 hover:text-primary transition-colors font-semibold">
-                                                info@phoenixcreativehub.co.uk
+                                            <a href="mailto:hello@phoenixcreativehub.co.uk" className="block text-xs text-slate-650 hover:text-primary transition-colors font-semibold">
+                                                hello@phoenixcreativehub.co.uk
                                             </a>
                                         </div>
                                     </div>
@@ -138,7 +138,7 @@ export default function Contact() {
                             {/* Google Map Embedded Card */}
                             <div className="rounded-3xl overflow-hidden border border-slate-100 shadow-lg shadow-slate-150/40 h-[200px] sm:h-[240px] relative bg-slate-100">
                                 <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14681.40428564023!2d72.53127814999999!3d23.111681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e832f05a96d19%3A0xc4aa0896085a6f8f!2sGota%2C%20London%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1719391104238!5m2!1sen!2sin"
+                                    src="https://maps.google.com/maps?q=195-197+Wood+Street,+London+E17+3NU,+UK&t=&z=15&ie=UTF8&iwloc=&output=embed"
                                     className="absolute inset-0 w-full h-full border-0"
                                     allowFullScreen={true}
                                     loading="lazy"
@@ -179,14 +179,14 @@ export default function Contact() {
                                                     <FormField control={form.control} name="name" render={({ field }) => (
                                                         <FormItem>
                                                             <FormLabel className="text-xs font-semibold text-[#111111]/70 uppercase tracking-wide">Full Name *</FormLabel>
-                                                            <FormControl><Input placeholder="Rajesh Sharma" className="h-10 bg-slate-50/50 border-slate-100 rounded-xl" {...field} /></FormControl>
+                                                            <FormControl><Input placeholder="Enter your full name" className="h-10 bg-slate-50/50 border-slate-100 rounded-xl" {...field} /></FormControl>
                                                             <FormMessage />
                                                         </FormItem>
                                                     )} />
                                                     <FormField control={form.control} name="email" render={({ field }) => (
                                                         <FormItem>
                                                             <FormLabel className="text-xs font-semibold text-[#111111]/70 uppercase tracking-wide">Email Address *</FormLabel>
-                                                            <FormControl><Input type="email" placeholder="rajesh@example.com" className="h-10 bg-slate-50/50 border-slate-100 rounded-xl" {...field} /></FormControl>
+                                                            <FormControl><Input type="email" placeholder="name@company.co.uk" className="h-10 bg-slate-50/50 border-slate-100 rounded-xl" {...field} /></FormControl>
                                                             <FormMessage />
                                                         </FormItem>
                                                     )} />
@@ -196,14 +196,14 @@ export default function Contact() {
                                                     <FormField control={form.control} name="phone" render={({ field }) => (
                                                         <FormItem>
                                                             <FormLabel className="text-xs font-semibold text-[#111111]/70 uppercase tracking-wide">Phone Number</FormLabel>
-                                                            <FormControl><Input placeholder="+91 95865 57162" className="h-10 bg-slate-50/50 border-slate-100 rounded-xl" {...field} /></FormControl>
+                                                            <FormControl><Input placeholder="e.g. +44 7833 817034" className="h-10 bg-slate-50/50 border-slate-100 rounded-xl" {...field} /></FormControl>
                                                             <FormMessage />
                                                         </FormItem>
                                                     )} />
                                                     <FormField control={form.control} name="company" render={({ field }) => (
                                                         <FormItem>
                                                             <FormLabel className="text-xs font-semibold text-[#111111]/70 uppercase tracking-wide">Company</FormLabel>
-                                                            <FormControl><Input placeholder="Acme Technologies" className="h-10 bg-slate-50/50 border-slate-100 rounded-xl" {...field} /></FormControl>
+                                                            <FormControl><Input placeholder="Your Company Name" className="h-10 bg-slate-50/50 border-slate-100 rounded-xl" {...field} /></FormControl>
                                                             <FormMessage />
                                                         </FormItem>
                                                     )} />
@@ -221,7 +221,6 @@ export default function Contact() {
                                                                 <SelectItem value="web_mobile">Web & Mobile Applications</SelectItem>
                                                                 <SelectItem value="ai_ml">AI Automation & ML</SelectItem>
                                                                 <SelectItem value="crm_erp">CRM & ERP Systems</SelectItem>
-                                                                <SelectItem value="cloud_devops">Cloud Infrastructure & DevOps</SelectItem>
                                                                 <SelectItem value="other">Other Inquiry</SelectItem>
                                                             </SelectContent>
                                                         </Select>

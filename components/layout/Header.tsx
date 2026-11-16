@@ -270,11 +270,11 @@ export function Header() {
                                 </Button>
 
                                 <div className="space-y-2 text-xs text-slate-500">
-                                    <a href="tel:+442079460912" className="flex items-center gap-2 hover:text-primary transition-colors">
-                                        <Phone className="w-4 h-4 text-primary shrink-0" /> +91 95865 57162
+                                    <a href="tel:+447833817034" className="flex items-center gap-2 hover:text-primary transition-colors">
+                                        <Phone className="w-4 h-4 text-primary shrink-0" /> +44 7833 817034
                                     </a>
-                                    <a href="mailto:info@phoenixcreativehub.co.uk" className="flex items-center gap-2 hover:text-primary transition-colors">
-                                        <Mail className="w-4 h-4 text-primary shrink-0" /> info@phoenixcreativehub.co.uk
+                                    <a href="mailto:hello@phoenixcreativehub.co.uk" className="flex items-center gap-2 hover:text-primary transition-colors">
+                                        <Mail className="w-4 h-4 text-primary shrink-0" /> hello@phoenixcreativehub.co.uk
                                     </a>
                                 </div>
                             </div>

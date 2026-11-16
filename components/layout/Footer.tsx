@@ -161,8 +161,8 @@ export function Footer() {
                                 <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 text-primary border border-primary/5">
                                     <Mail className="w-4 h-4" />
                                 </div>
-                                <a href="mailto:info@phoenixcreativehub.co.uk" className="hover:text-primary transition-colors">
-                                    info@phoenixcreativehub.co.uk
+                                <a href="mailto:hello@phoenixcreativehub.co.uk" className="hover:text-primary transition-colors">
+                                    hello@phoenixcreativehub.co.uk
                                 </a>
                             </li>
                         </ul>

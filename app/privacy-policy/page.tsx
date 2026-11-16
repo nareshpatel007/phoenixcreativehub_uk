@@ -55,7 +55,7 @@ export default function PrivacyPolicyPage() {
                     <div className="mt-4 p-5 bg-slate-50 border border-slate-100 rounded-xl text-sm">
                         <p className="font-bold text-[#111111] mb-1">Phoenix Creative Hub UK</p>
                         <p>Suite RA01, 195-197 Wood Street, London, E17 3NU, United Kingdom</p>
-                        <p className="mt-2 text-primary font-semibold">Email: info@phoenixcreativehub.co.uk</p>
+                        <p className="mt-2 text-primary font-semibold">Email: hello@phoenixcreativehub.co.uk</p>
                     </div>
                 </section>
                 </div>

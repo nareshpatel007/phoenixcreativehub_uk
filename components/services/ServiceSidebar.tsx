@@ -153,17 +153,17 @@ export function ServiceSidebar({ currentSlug }: ServiceSidebarProps) {
                 <div className="absolute top-0 right-0 w-24 h-24 rounded-full bg-primary/10 blur-xl pointer-events-none" />
                 <h3 className="font-display font-bold text-white text-base mb-4">Direct Support</h3>
                 <div className="space-y-3">
-                    <a href="tel:+442079460912" className="flex items-center gap-3 text-xs text-white/70 hover:text-white transition-colors">
+                    <a href="tel:+447833817034" className="flex items-center gap-3 text-xs text-white/70 hover:text-white transition-colors">
                         <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
                             <Phone className="w-4 h-4 text-primary" />
                         </div>
                         <span>+91 98988 42942</span>
                     </a>
-                    <a href="mailto:info@phoenixcreativehub.co.uk" className="flex items-center gap-3 text-xs text-white/70 hover:text-white transition-colors">
+                    <a href="mailto:hello@phoenixcreativehub.co.uk" className="flex items-center gap-3 text-xs text-white/70 hover:text-white transition-colors">
                         <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
                             <Mail className="w-4 h-4 text-primary" />
                         </div>
-                        <span>info@phoenixcreativehub.co.uk</span>
+                        <span>hello@phoenixcreativehub.co.uk</span>
                     </a>
                 </div>
             </div>

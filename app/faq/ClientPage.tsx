@@ -64,7 +64,7 @@ const FAQS_DATA: FAQItem[] = [
         id: "remote-work",
         category: "process",
         question: "Do you work with remote clients?",
-        answer: "Absolutely. We work with clients globally from our headquarters in London, Gujarat. Our communication workflows are designed for seamless remote collaboration using modern project management tools.",
+        answer: "Absolutely. We work with clients globally from our headquarters in London, UK. Our communication workflows are designed for seamless remote collaboration using modern project management tools.",
     }
 ];
 

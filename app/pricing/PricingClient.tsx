@@ -126,7 +126,7 @@ export default function PricingClient() {
                                 <Link href="/contact">Request Free Quote <ArrowRight className="w-4 h-4 ml-2" /></Link>
                             </Button>
                             <Button asChild variant="outline" className="border-white/30 text-white hover:bg-white/10 font-semibold px-6 rounded-full">
-                                <Link href="tel:+442079460912"><Phone className="w-4 h-4 mr-2" /> Call Us</Link>
+                                <Link href="tel:+447833817034"><Phone className="w-4 h-4 mr-2" /> Call Us</Link>
                             </Button>
                         </div>
                     </div>
@@ -140,11 +140,11 @@ export default function PricingClient() {
                         <h3 className="text-2xl font-display font-bold text-[#111111]">Have Questions About Pricing?</h3>
                         <p className="text-slate-600 text-sm">Our team is here to help you understand the costs and find the best solution for your budget.</p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                            <a href="tel:+442079460912" className="flex items-center gap-2 text-[#9ACD32] font-semibold hover:underline">
-                                <Phone className="w-5 h-5" /> +91 95865 57162
+                            <a href="tel:+447833817034" className="flex items-center gap-2 text-[#9ACD32] font-semibold hover:underline">
+                                <Phone className="w-5 h-5" /> +44 7833 817034
                             </a>
-                            <a href="mailto:info@phoenixcreativehub.co.uk" className="flex items-center gap-2 text-[#9ACD32] font-semibold hover:underline">
-                                <Mail className="w-5 h-5" /> info@phoenixcreativehub.co.uk
+                            <a href="mailto:hello@phoenixcreativehub.co.uk" className="flex items-center gap-2 text-[#9ACD32] font-semibold hover:underline">
+                                <Mail className="w-5 h-5" /> hello@phoenixcreativehub.co.uk
                             </a>
                         </div>
                     </div>

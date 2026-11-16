@@ -4,11 +4,11 @@ import ClientPage from "./ClientPage";
 
 export const metadata: Metadata = {
     title: "Contact Us | Get Free Quote for Software Development",
-    description: "Contact Phoenix Creative Hub UK London for custom software development. Call +91 95865 57162. Expert web, mobile apps, CRM & IT consulting solutions.",
+    description: "Contact Phoenix Creative Hub UK London for custom software development. Call +44 7833 817034. Expert web, mobile apps, CRM & IT consulting solutions.",
     keywords: ['Contact Phoenix Creative Hub UK', 'Software Development Contact', 'IT Company London', 'Web Development Quote', 'Mobile App Development Inquiry', 'Custom Software Consultation'],
     openGraph: {
         title: "Contact Us | Get Free Quote for Software Development",
-        description: "Contact Phoenix Creative Hub UK London for custom software development. Call +91 95865 57162. Expert web, mobile apps, CRM & IT consulting.",
+        description: "Contact Phoenix Creative Hub UK London for custom software development. Call +44 7833 817034. Expert web, mobile apps, CRM & IT consulting.",
         url: 'https://phoenixcreativehub.co.uk/contact',
         siteName: 'Phoenix Creative Hub UK',
         images: [{
