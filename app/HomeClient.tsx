@@ -165,8 +165,7 @@ export default function HomeClient() {
                             </motion.div>
 
                             <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl xl:text-6xl font-display font-extrabold leading-[1.08] tracking-tight text-white">
-                                Phoenix Creative Hub UK
-                                <span className="block text-[#9ACD32] mt-2">Custom Software & Mobile App Development Company</span>
+                                Phoenix Creative Hub UK <span className="inline text-[#9ACD32]">Custom Software &amp; Mobile App Development Company</span>
                             </motion.h1>
 
                             <motion.p variants={fadeUp} className="text-lg text-slate-300 leading-relaxed max-w-2xl">
