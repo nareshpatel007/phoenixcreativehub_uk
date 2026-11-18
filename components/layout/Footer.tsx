@@ -26,7 +26,8 @@ const QUICK_LINKS = [
 ];
 
 const SOCIAL = [
-    { icon: Instagram, href: "https://www.instagram.com/phoenix_creative_hub_uk?xtok=b21ncG0wejN0MjFo", label: "Instagram" },
+    { icon: Instagram, href: "https://www.instagram.com/phoenix_creative_hub_uk?cplk=eGxndHBzaHE5dXky", label: "Instagram" },
+    { icon: Facebook, href: "https://www.facebook.com/phoenixcreativehubukltd", label: "Facebook" },
 ];
 
 export function Footer() {

@@ -121,7 +121,8 @@ const jsonLd = {
         "addressCountry": "GB"
     },
     "sameAs": [
-        "https://www.instagram.com/phoenix_creative_hub_uk?xtok=b21ncG0wejN0MjFo"
+        "https://www.instagram.com/phoenix_creative_hub_uk?cplk=eGxndHBzaHE5dXky",
+        "https://www.facebook.com/phoenixcreativehubukltd"
     ],
     "description": "PHOENIX CREATIVE HUB UK LTD (Company No. 17524969) is a leading software development and creative digital agency in London, UK offering web development, mobile apps, CRM & ERP systems, SEO, GEO, AEO, and AI automation."
 };
