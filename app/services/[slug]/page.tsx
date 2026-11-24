@@ -6,6 +6,9 @@ import CustomSoftwareDetailClient from "./CustomSoftwareDetailClient";
 import WebDevelopmentDetailClient from "./WebDevelopmentDetailClient";
 import MobileAppDetailClient from "./MobileAppDetailClient";
 import AIDevelopmentDetailClient from "./AIDevelopmentDetailClient";
+import CRMDevelopmentDetailClient from "./CRMDevelopmentDetailClient";
+import ERPDevelopmentDetailClient from "./ERPDevelopmentDetailClient";
+import SEOServicesDetailClient from "./SEOServicesDetailClient";
 
 interface Props {
     params: Promise<{ slug: string }>;
@@ -17,11 +20,134 @@ export async function generateStaticParams() {
         { slug: "web-development" },
         { slug: "mobile-app-development" },
         { slug: "ai-development" },
+        { slug: "crm-development" },
+        { slug: "erp-development" },
+        { slug: "seo-services" },
     ];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
+
+    // Specific SEO Recommendations from SEO Content Document for SEO Services
+    if (slug === "seo-services") {
+        return {
+            title: "SEO Agency UK | SEO Services for Business Growth",
+            description: "Improve your visibility and attract more relevant enquiries with practical SEO services from Phoenix Creative Hub. Speak to our team about your UK growth goals.",
+            keywords: [
+                "SEO agency UK",
+                "SEO company UK",
+                "SEO services UK",
+                "SEO agency London",
+                "technical SEO",
+                "local SEO services UK",
+                "on-page SEO",
+                "Phoenix Creative Hub UK",
+            ],
+            alternates: {
+                canonical: `https://phoenixcreativehub.co.uk/services/${slug}`,
+            },
+            openGraph: {
+                title: "SEO Agency UK | SEO Services for Business Growth",
+                description: "Improve your visibility and attract more relevant enquiries with practical SEO services from Phoenix Creative Hub. Speak to our team about your UK growth goals.",
+                url: `https://phoenixcreativehub.co.uk/services/${slug}`,
+                siteName: "Phoenix Creative Hub UK",
+                images: [{
+                    url: "https://phoenixcreativehub.co.uk/images/logo-black.png",
+                    width: 1200,
+                    height: 630,
+                    alt: "SEO Agency UK - Phoenix Creative Hub",
+                }],
+                locale: "en_GB",
+                type: "article",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "SEO Agency UK | SEO Services for Business Growth",
+                description: "Improve your visibility and attract more relevant enquiries with practical SEO services from Phoenix Creative Hub. Speak to our team about your UK growth goals.",
+                images: ["https://phoenixcreativehub.co.uk/images/logo-black.png"],
+            },
+        };
+    }
+
+    // Specific SEO Recommendations from SEO Content Document for ERP Development
+    if (slug === "erp-development") {
+        return {
+            title: "ERP Development Company UK | Phoenix Creative Hub",
+            description: "Bring key business processes into a system designed around your operation. Discuss custom ERP development and integration with Phoenix Creative Hub.",
+            keywords: [
+                "ERP development company UK",
+                "custom ERP software development UK",
+                "ERP software development",
+                "bespoke ERP software",
+                "ERP integration services UK",
+                "Phoenix Creative Hub UK",
+            ],
+            alternates: {
+                canonical: `https://phoenixcreativehub.co.uk/services/${slug}`,
+            },
+            openGraph: {
+                title: "ERP Development Company UK | Phoenix Creative Hub",
+                description: "Bring key business processes into a system designed around your operation. Discuss custom ERP development and integration with Phoenix Creative Hub.",
+                url: `https://phoenixcreativehub.co.uk/services/${slug}`,
+                siteName: "Phoenix Creative Hub UK",
+                images: [{
+                    url: "https://phoenixcreativehub.co.uk/images/logo-black.png",
+                    width: 1200,
+                    height: 630,
+                    alt: "ERP Development Company UK - Phoenix Creative Hub",
+                }],
+                locale: "en_GB",
+                type: "article",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "ERP Development Company UK | Phoenix Creative Hub",
+                description: "Bring key business processes into a system designed around your operation. Discuss custom ERP development and integration with Phoenix Creative Hub.",
+                images: ["https://phoenixcreativehub.co.uk/images/logo-black.png"],
+            },
+        };
+    }
+
+    // Specific SEO Recommendations from SEO Content Document for CRM Development
+    if (slug === "crm-development" || slug === "crm-erp-systems") {
+        return {
+            title: "CRM Development Company UK | Phoenix Creative Hub",
+            description: "Plan a CRM around your sales and customer workflows. Phoenix Creative Hub helps UK businesses scope bespoke CRM software and integrations.",
+            keywords: [
+                "CRM development company UK",
+                "custom CRM development UK",
+                "CRM software development",
+                "bespoke CRM software",
+                "CRM integration services UK",
+                "CRM automation",
+                "Phoenix Creative Hub UK",
+            ],
+            alternates: {
+                canonical: `https://phoenixcreativehub.co.uk/services/${slug}`,
+            },
+            openGraph: {
+                title: "CRM Development Company UK | Phoenix Creative Hub",
+                description: "Plan a CRM around your sales and customer workflows. Phoenix Creative Hub helps UK businesses scope bespoke CRM software and integrations.",
+                url: `https://phoenixcreativehub.co.uk/services/${slug}`,
+                siteName: "Phoenix Creative Hub UK",
+                images: [{
+                    url: "https://phoenixcreativehub.co.uk/images/logo-black.png",
+                    width: 1200,
+                    height: 630,
+                    alt: "CRM Development Company UK - Phoenix Creative Hub",
+                }],
+                locale: "en_GB",
+                type: "article",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "CRM Development Company UK | Phoenix Creative Hub",
+                description: "Plan a CRM around your sales and customer workflows. Phoenix Creative Hub helps UK businesses scope bespoke CRM software and integrations.",
+                images: ["https://phoenixcreativehub.co.uk/images/logo-black.png"],
+            },
+        };
+    }
 
     // Specific SEO Recommendations from SEO Content Document for AI Development and Automation
     if (slug === "ai-automation-ml" || slug === "ai-development") {
@@ -214,6 +340,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ServiceDetailPage({ params }: Props) {
     const { slug } = await params;
+
+    if (slug === "seo-services") {
+        return <SEOServicesDetailClient service={services[0]} />;
+    }
+
+    if (slug === "erp-development") {
+        const matchingService = services.find((s) => s.slug === "crm-erp-systems");
+        return <ERPDevelopmentDetailClient service={matchingService || services[0]} />;
+    }
+
+    if (slug === "crm-development" || slug === "crm-erp-systems") {
+        const matchingService = services.find((s) => s.slug === "crm-erp-systems");
+        return <CRMDevelopmentDetailClient service={matchingService || services[0]} />;
+    }
 
     if (slug === "ai-automation-ml" || slug === "ai-development") {
         const matchingService = services.find((s) => s.slug === "ai-automation-ml");

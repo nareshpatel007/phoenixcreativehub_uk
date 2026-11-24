@@ -3,24 +3,38 @@ import type { Metadata } from "next";
 import ClientPage from "./ClientPage";
 
 export const metadata: Metadata = {
-    title: "About Us | Software Development Company London",
-    description: "Learn about Phoenix Creative Hub UK, London's leading software development company. 8+ years experience, 100+ successful projects delivered globally.",
-    keywords: ['About Phoenix Creative Hub UK', 'Software Company London', 'IT Company UK', 'Web Development Team', 'Mobile App Developers', 'Custom Software Engineers'],
+    title: "About Phoenix Creative Hub | UK Technology & SEO",
+    description: "Meet Phoenix Creative Hub, a UK-focused technology and digital growth partner for software development, AI, web, mobile apps and SEO.",
+    keywords: [
+        "Software development company London",
+        "UK software development company",
+        "technology company London",
+        "IT solutions company UK",
+        "digital technology company UK",
+        "Phoenix Creative Hub UK"
+    ],
     alternates: {
-        canonical: 'https://phoenixcreativehub.co.uk/about-us',
+        canonical: "https://phoenixcreativehub.co.uk/about-us",
     },
     openGraph: {
-        title: "About Us | Software Development Company London",
-        description: "Learn about Phoenix Creative Hub UK, London's leading software development company. 8+ years experience, 100+ successful projects.",
-        url: 'https://phoenixcreativehub.co.uk/about-us',
-        siteName: 'Phoenix Creative Hub UK',
+        title: "About Phoenix Creative Hub | UK Technology & SEO",
+        description: "Meet Phoenix Creative Hub, a UK-focused technology and digital growth partner for software development, AI, web, mobile apps and SEO.",
+        url: "https://phoenixcreativehub.co.uk/about-us",
+        siteName: "Phoenix Creative Hub UK",
         images: [{
-            url: '/images/logo-black.png',
+            url: "https://phoenixcreativehub.co.uk/images/logo-black.png",
             width: 1200,
             height: 630,
+            alt: "About Phoenix Creative Hub UK",
         }],
-        locale: 'en_GB',
-        type: 'website',
+        locale: "en_GB",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "About Phoenix Creative Hub | UK Technology & SEO",
+        description: "Meet Phoenix Creative Hub, a UK-focused technology and digital growth partner for software development, AI, web, mobile apps and SEO.",
+        images: ["https://phoenixcreativehub.co.uk/images/logo-black.png"],
     },
 };
 
