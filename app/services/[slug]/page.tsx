@@ -5,6 +5,7 @@ import ServiceDetailClient from "./ServiceDetailClient";
 import CustomSoftwareDetailClient from "./CustomSoftwareDetailClient";
 import WebDevelopmentDetailClient from "./WebDevelopmentDetailClient";
 import MobileAppDetailClient from "./MobileAppDetailClient";
+import AIDevelopmentDetailClient from "./AIDevelopmentDetailClient";
 
 interface Props {
     params: Promise<{ slug: string }>;
@@ -15,11 +16,52 @@ export async function generateStaticParams() {
         ...services.map((s) => ({ slug: s.slug })),
         { slug: "web-development" },
         { slug: "mobile-app-development" },
+        { slug: "ai-development" },
     ];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
+
+    // Specific SEO Recommendations from SEO Content Document for AI Development and Automation
+    if (slug === "ai-automation-ml" || slug === "ai-development") {
+        return {
+            title: "AI Development & Automation UK | Phoenix Creative Hub",
+            description: "Put AI to work on real business challenges. Discuss AI development, workflow automation and intelligent applications with Phoenix Creative Hub.",
+            keywords: [
+                "AI development company UK",
+                "AI automation services UK",
+                "AI agent development",
+                "machine learning development UK",
+                "AI chatbot development UK",
+                "business process automation",
+                "Phoenix Creative Hub UK",
+            ],
+            alternates: {
+                canonical: `https://phoenixcreativehub.co.uk/services/${slug}`,
+            },
+            openGraph: {
+                title: "AI Development & Automation UK | Phoenix Creative Hub",
+                description: "Put AI to work on real business challenges. Discuss AI development, workflow automation and intelligent applications with Phoenix Creative Hub.",
+                url: `https://phoenixcreativehub.co.uk/services/${slug}`,
+                siteName: "Phoenix Creative Hub UK",
+                images: [{
+                    url: "https://phoenixcreativehub.co.uk/images/logo-black.png",
+                    width: 1200,
+                    height: 630,
+                    alt: "AI Development & Automation UK - Phoenix Creative Hub",
+                }],
+                locale: "en_GB",
+                type: "article",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "AI Development & Automation UK | Phoenix Creative Hub",
+                description: "Put AI to work on real business challenges. Discuss AI development, workflow automation and intelligent applications with Phoenix Creative Hub.",
+                images: ["https://phoenixcreativehub.co.uk/images/logo-black.png"],
+            },
+        };
+    }
 
     // Specific SEO Recommendations from SEO Content Document for Mobile App Development
     if (slug === "mobile-app-development") {
@@ -172,6 +214,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ServiceDetailPage({ params }: Props) {
     const { slug } = await params;
+
+    if (slug === "ai-automation-ml" || slug === "ai-development") {
+        const matchingService = services.find((s) => s.slug === "ai-automation-ml");
+        return <AIDevelopmentDetailClient service={matchingService || services[0]} />;
+    }
 
     if (slug === "mobile-app-development") {
         const matchingService = services.find((s) => s.slug === "web-mobile-development");
