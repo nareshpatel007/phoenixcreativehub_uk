@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     title: 'How to Choose a Software Development Company | 7 Key Factors [Checklist]',
     description: 'Learn how to choose the right software development company for your project. 7 essential factors to consider: experience, portfolio, communication, pricing, and more.',
     keywords: ['how to choose software development company', 'software development company selection', 'software developer checklist', 'hire software development team', 'software development partner'],
+    alternates: {
+        canonical: 'https://phoenixcreativehub.co.uk/guides/how-to-choose-software-development-company',
+    },
     openGraph: {
         title: 'How to Choose a Software Development Company | 7 Key Factors [Checklist]',
         description: 'Learn how to choose the right software development company for your project. 7 essential factors to consider.',

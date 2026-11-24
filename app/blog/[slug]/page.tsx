@@ -38,6 +38,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title: `${post.title} | Software Engineering Blog`,
         description: cleanDescription,
         keywords: [post.tag, 'Software Engineering', 'Tech Blog', 'Web Development', 'Next.js', 'Database'],
+        alternates: {
+            canonical: `https://phoenixcreativehub.co.uk/blog/${slug}`,
+        },
         openGraph: {
             title: `${post.title} | Phoenix Creative Hub UK`,
             description: cleanDescription,

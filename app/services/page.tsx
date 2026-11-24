@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     title: "IT Services London | Custom Software Development [Step by Step]",
     description: "Expert IT services in London: custom software development, web & mobile apps, AI automation, CRM/ERP systems, cloud infrastructure & digital transformation solutions.",
     keywords: ['IT Services London', 'Custom Software Development', 'Web Development London', 'Mobile App Development', 'AI Solutions UK', 'Cloud Migration Services', 'CRM ERP Development', 'Digital Transformation'],
+    alternates: {
+        canonical: 'https://phoenixcreativehub.co.uk/services',
+    },
     openGraph: {
         title: "IT Services London | Custom Software Development [Step by Step]",
         description: "Expert IT services in London: custom software development, web & mobile apps, AI automation, CRM/ERP systems, cloud infrastructure & digital transformation solutions.",

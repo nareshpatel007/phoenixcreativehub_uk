@@ -5,6 +5,9 @@ export const metadata: Metadata = {
     title: "Portfolio & Case Studies | Phoenix Creative Hub UK",
     description: "Explore our portfolio of cutting-edge web applications, iOS and Android mobile apps, bespoke CRM & ERP systems, and AI automation solutions delivered across the UK and internationally.",
     keywords: ['Phoenix Creative Hub Portfolio', 'Software Development Case Studies London', 'Web Development Projects UK', 'Mobile App Portfolio London', 'AI Solutions UK', 'Bespoke CRM ERP Case Studies'],
+    alternates: {
+        canonical: 'https://phoenixcreativehub.co.uk/portfolio',
+    },
     openGraph: {
         title: "Portfolio & Case Studies | Phoenix Creative Hub UK",
         description: "Explore our portfolio of cutting-edge web applications, iOS and Android mobile apps, bespoke CRM & ERP systems, and AI automation solutions.",

@@ -7,6 +7,9 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
     title: "Why Us | Choose Phoenix Creative Hub UK",
     description: "Discover why industry leaders choose Phoenix Creative Hub UK. AI-first engineering team, zero outsourcing, 8+ years experience, and 100+ successful software projects delivered.",
+    alternates: {
+        canonical: 'https://phoenixcreativehub.co.uk/why-us',
+    },
 };
 
 export default function WhyUsPage() {

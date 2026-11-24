@@ -5,6 +5,9 @@ export const metadata: Metadata = {
     title: 'Phoenix Creative Hub UK - Premier Web, Mobile & Software Solutions London',
     description: 'Premier digital engineering agency in London, UK. Custom web development, iOS & Android mobile apps, bespoke CRM & ERP platforms, and AI automation.',
     keywords: ['Web Development London', 'Mobile App Development UK', 'Custom Software London', 'CRM ERP Systems', 'AI Automation UK', 'Phoenix Creative Hub UK'],
+    alternates: {
+        canonical: 'https://phoenixcreativehub.co.uk',
+    },
     openGraph: {
         title: 'Phoenix Creative Hub UK - Premier Web, Mobile & Software Solutions London',
         description: 'Premier digital engineering agency in London, UK. Custom web development, iOS & Android mobile apps, bespoke CRM & ERP platforms, and AI automation.',

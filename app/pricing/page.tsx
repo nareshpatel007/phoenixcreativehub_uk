@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     title: 'Phoenix Creative Hub UK Pricing | Custom Software Development Cost [Get Quote]',
     description: 'Get transparent pricing for custom software development, web & mobile apps, CRM/ERP systems, AI solutions & cloud infrastructure. Request a free quote from Phoenix Creative Hub UK London.',
     keywords: ['Phoenix Creative Hub UK pricing', 'Software Development Cost London', 'Custom Software Pricing', 'Web Development Cost UK', 'Mobile App Development Price', 'CRM ERP Cost', 'AI Solutions Pricing'],
+    alternates: {
+        canonical: 'https://phoenixcreativehub.co.uk/pricing',
+    },
     openGraph: {
         title: 'Phoenix Creative Hub UK Pricing | Custom Software Development Cost [Get Quote]',
         description: 'Get transparent pricing for custom software development, web & mobile apps, CRM/ERP systems, AI solutions & cloud infrastructure.',

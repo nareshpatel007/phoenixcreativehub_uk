@@ -20,6 +20,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title: `${project.title} | Case Study`,
         description: project.desc,
         keywords: [...project.tags, project.category, project.title, 'Software Development Case Study', 'IT Project Example'],
+        alternates: {
+            canonical: `https://phoenixcreativehub.co.uk/portfolio/${project.slug}`,
+        },
         openGraph: {
             title: `${project.title} | Phoenix Creative Hub UK`,
             description: project.desc,

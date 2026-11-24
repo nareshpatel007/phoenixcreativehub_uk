@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     title: "Blog | Software Engineering Technical Insights",
     description: "Read technical guides, database optimizations, Next.js architecture guidelines & cloud engineering tips by our expert software consulting team.",
     keywords: ['Software Engineering Blog', 'Tech Blog UK', 'Next.js Tutorials', 'Database Optimization', 'Cloud Engineering Tips', 'Web Development Guides'],
+    alternates: {
+        canonical: 'https://phoenixcreativehub.co.uk/blog',
+    },
     openGraph: {
         title: "Blog | Software Engineering Technical Insights",
         description: "Read technical guides, database optimizations, Next.js architecture guidelines & cloud engineering tips by our expert team.",

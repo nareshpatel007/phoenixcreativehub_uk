@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     title: 'Complete Guide to Custom Software Development 2024 | Process, Cost & Benefits',
     description: 'Learn everything about custom software development: process, costs, benefits, technologies, and how to choose the right development partner. Expert guide from Phoenix Creative Hub UK.',
     keywords: ['custom software development guide', 'software development process', 'custom software cost', 'software development benefits', 'software development technologies', 'how to choose software developer'],
+    alternates: {
+        canonical: 'https://phoenixcreativehub.co.uk/guides/custom-software-development-guide',
+    },
     openGraph: {
         title: 'Complete Guide to Custom Software Development 2024 | Process, Cost & Benefits',
         description: 'Learn everything about custom software development: process, costs, benefits, technologies, and how to choose the right development partner.',

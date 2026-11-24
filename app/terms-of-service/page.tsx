@@ -6,6 +6,9 @@ import { FileText } from "lucide-react";
 export const metadata: Metadata = {
     title: "Terms of Service | Service Agreement",
     description: "Read Phoenix Creative Hub UK's terms of service. Understand the terms, consulting guidelines, and service level policies for custom software development projects.",
+    alternates: {
+        canonical: 'https://phoenixcreativehub.co.uk/terms-of-service',
+    },
 };
 
 export default function TermsOfServicePage() {

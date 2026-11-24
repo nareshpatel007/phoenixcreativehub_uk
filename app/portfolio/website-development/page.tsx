@@ -13,6 +13,9 @@ export const metadata: Metadata = {
         'Phoenix Creative Hub UK Portfolio',
         'Industry Software Solutions'
     ],
+    alternates: {
+        canonical: 'https://phoenixcreativehub.co.uk/portfolio/website-development',
+    },
     openGraph: {
         title: "AI-Powered Website Development & Business Automation | Phoenix Creative Hub UK",
         description: "Build Smarter. Automate Faster. Grow Better. View custom website development projects, tech stack, and business impact.",

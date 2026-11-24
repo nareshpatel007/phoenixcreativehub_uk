@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     title: 'Complete Guide to Web & Mobile App Development 2024 | Process & Cost',
     description: 'Learn everything about web and mobile app development: native vs cross-platform, development process, costs, technologies, and how to choose the right approach for your business.',
     keywords: ['web mobile app development guide', 'native vs cross-platform development', 'mobile app development cost', 'web app development process', 'app development technologies', 'ios android development'],
+    alternates: {
+        canonical: 'https://phoenixcreativehub.co.uk/guides/web-mobile-development-guide',
+    },
     openGraph: {
         title: 'Complete Guide to Web & Mobile App Development 2024 | Process & Cost',
         description: 'Learn everything about web and mobile app development: native vs cross-platform, development process, costs, technologies, and how to choose the right approach.',

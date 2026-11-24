@@ -6,6 +6,9 @@ import { Shield } from "lucide-react";
 export const metadata: Metadata = {
     title: "Privacy Policy | Data Protection Policy",
     description: "Read Phoenix Creative Hub UK's privacy policy. Learn how we handle, store, and protect your custom software specifications and client information securely.",
+    alternates: {
+        canonical: 'https://phoenixcreativehub.co.uk/privacy-policy',
+    },
 };
 
 export default function PrivacyPolicyPage() {

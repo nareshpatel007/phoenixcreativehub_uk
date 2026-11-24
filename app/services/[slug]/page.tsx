@@ -27,6 +27,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title: `${service.title} | IT Services`,
         description: service.description,
         keywords: [...service.technologies, ...service.features, service.title, 'Software Development London', 'IT Solutions India'],
+        alternates: {
+            canonical: `https://phoenixcreativehub.co.uk/services/${service.slug}`,
+        },
         openGraph: {
             title: `${service.title} | Phoenix Creative Hub UK`,
             description: service.tagline,

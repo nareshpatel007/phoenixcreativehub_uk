@@ -13,6 +13,9 @@ export const metadata: Metadata = {
         'Phoenix Creative Hub UK Mobile Apps',
         'Enterprise Mobile Solutions'
     ],
+    alternates: {
+        canonical: 'https://phoenixcreativehub.co.uk/portfolio/mobile-application',
+    },
     openGraph: {
         title: "Mobile App Development Portfolio | Phoenix Creative Hub UK",
         description: "Build Smarter. Automate Faster. Grow Better. View custom iOS & Android mobile applications, tech stack, and business impact.",

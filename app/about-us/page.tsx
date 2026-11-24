@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     title: "About Us | Software Development Company London",
     description: "Learn about Phoenix Creative Hub UK, London's leading software development company. 8+ years experience, 100+ successful projects delivered globally.",
     keywords: ['About Phoenix Creative Hub UK', 'Software Company London', 'IT Company UK', 'Web Development Team', 'Mobile App Developers', 'Custom Software Engineers'],
+    alternates: {
+        canonical: 'https://phoenixcreativehub.co.uk/about-us',
+    },
     openGraph: {
         title: "About Us | Software Development Company London",
         description: "Learn about Phoenix Creative Hub UK, London's leading software development company. 8+ years experience, 100+ successful projects.",
