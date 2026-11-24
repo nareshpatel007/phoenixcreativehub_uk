@@ -2,118 +2,172 @@ import { MetadataRoute } from 'next'
 import { services } from '@/data/services'
 import { PORTFOLIO_PROJECTS } from '@/lib/portfolio'
 
+export const dynamic = 'force-dynamic'
+export const revalidate = 3600 // revalidate at most once every hour
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const baseUrl = 'https://phoenixcreativehub.co.uk'
+    const now = new Date()
 
-    // Static pages
-    const staticPages = [
+    // 1. Core Primary Static Pages
+    const staticPages: MetadataRoute.Sitemap = [
         {
             url: baseUrl,
-            lastModified: new Date(),
-            changeFrequency: 'daily' as const,
-            priority: 1,
-        },
-        {
-            url: `${baseUrl}/about-us`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly' as const,
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/contact`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly' as const,
-            priority: 0.8,
+            lastModified: now,
+            changeFrequency: 'daily',
+            priority: 1.0,
         },
         {
             url: `${baseUrl}/services`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly' as const,
+            lastModified: now,
+            changeFrequency: 'weekly',
             priority: 0.9,
         },
         {
             url: `${baseUrl}/portfolio`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly' as const,
+            lastModified: now,
+            changeFrequency: 'weekly',
             priority: 0.9,
         },
         {
-            url: `${baseUrl}/blog`,
-            lastModified: new Date(),
-            changeFrequency: 'daily' as const,
+            url: `${baseUrl}/portfolio/mobile-application`,
+            lastModified: now,
+            changeFrequency: 'weekly',
+            priority: 0.85,
+        },
+        {
+            url: `${baseUrl}/portfolio/website-development`,
+            lastModified: now,
+            changeFrequency: 'weekly',
+            priority: 0.85,
+        },
+        {
+            url: `${baseUrl}/about-us`,
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/why-us`,
+            lastModified: now,
+            changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/pricing`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly' as const,
+            lastModified: now,
+            changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
+            url: `${baseUrl}/contact`,
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.85,
+        },
+        {
+            url: `${baseUrl}/faq`,
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.75,
+        },
+        {
+            url: `${baseUrl}/blog`,
+            lastModified: now,
+            changeFrequency: 'daily',
+            priority: 0.8,
+        },
+        // In-depth Engineering Guides
+        {
             url: `${baseUrl}/guides/custom-software-development-guide`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly' as const,
-            priority: 0.9,
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.85,
         },
         {
             url: `${baseUrl}/guides/web-mobile-development-guide`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly' as const,
-            priority: 0.9,
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.85,
         },
         {
             url: `${baseUrl}/guides/ai-ml-implementation-guide`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly' as const,
-            priority: 0.9,
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.85,
         },
         {
             url: `${baseUrl}/guides/how-to-choose-software-development-company`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly' as const,
+            lastModified: now,
+            changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/guides/custom-software-vs-off-the-shelf`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly' as const,
+            lastModified: now,
+            changeFrequency: 'monthly',
             priority: 0.8,
+        },
+        // Compliance & Legal
+        {
+            url: `${baseUrl}/privacy-policy`,
+            lastModified: now,
+            changeFrequency: 'yearly',
+            priority: 0.4,
+        },
+        {
+            url: `${baseUrl}/terms-of-service`,
+            lastModified: now,
+            changeFrequency: 'yearly',
+            priority: 0.4,
         },
     ]
 
-    // Service pages
-    const servicePages = services.map((service) => ({
+    // 2. Individual Service Pages (Custom Software, Web & Mobile, AI, CRM/ERP)
+    const servicePages: MetadataRoute.Sitemap = services.map((service) => ({
         url: `${baseUrl}/services/${service.slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly' as const,
-        priority: 0.8,
+        lastModified: now,
+        changeFrequency: 'weekly',
+        priority: 0.85,
     }))
 
-    // Portfolio pages
-    const portfolioPages = PORTFOLIO_PROJECTS.map((project) => ({
+    // 3. Dynamic Portfolio Project Detail Pages
+    const portfolioPages: MetadataRoute.Sitemap = PORTFOLIO_PROJECTS.map((project) => ({
         url: `${baseUrl}/portfolio/${project.slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly' as const,
-        priority: 0.7,
+        lastModified: now,
+        changeFrequency: 'monthly',
+        priority: 0.75,
     }))
 
-    // Fetch blog pages from WordPress API
+    // 4. Dynamic Blog Posts (Gracefully fetches from WordPress REST API if available)
     let blogPages: MetadataRoute.Sitemap = []
+    const apiUrl = process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://backend.phoenixcreativehub.co.uk/wp-json/sandbox/v1'
+
     try {
-        const response = await fetch('https://backend.phoenixcreativehub.co.uk/wp-json/sandbox/v1/posts/all', {
-            next: { revalidate: 3600 } // Revalidate every hour
+        const controller = new AbortController()
+        const timeoutId = setTimeout(() => controller.abort(), 4000)
+
+        const response = await fetch(`${apiUrl}/posts/all`, {
+            signal: controller.signal,
+            next: { revalidate: 3600 },
         })
-        const data = await response.json()
-        const posts = data.posts || []
-        
-        blogPages = posts.map((post: any) => ({
-            url: `${baseUrl}/blog/${post.slug}`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly' as const,
-            priority: 0.6,
-        }))
-    } catch (error) {
-        console.error('Failed to fetch blog posts for sitemap:', error)
+        clearTimeout(timeoutId)
+
+        if (response.ok) {
+            const data = await response.json()
+            const posts = Array.isArray(data) ? data : data.posts || []
+
+            blogPages = posts
+                .filter((post: any) => post && post.slug)
+                .map((post: any) => ({
+                    url: `${baseUrl}/blog/${post.slug}`,
+                    lastModified: post.modified || post.date ? new Date(post.modified || post.date) : now,
+                    changeFrequency: 'weekly' as const,
+                    priority: 0.7,
+                }))
+        }
+    } catch {
+        // Fail quietly and gracefully during build or if backend domain DNS is pending
     }
 
     return [...staticPages, ...servicePages, ...portfolioPages, ...blogPages]
