@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import ServiceDetailClient from "./ServiceDetailClient";
 import CustomSoftwareDetailClient from "./CustomSoftwareDetailClient";
 import WebDevelopmentDetailClient from "./WebDevelopmentDetailClient";
+import MobileAppDetailClient from "./MobileAppDetailClient";
 
 interface Props {
     params: Promise<{ slug: string }>;
@@ -13,11 +14,52 @@ export async function generateStaticParams() {
     return [
         ...services.map((s) => ({ slug: s.slug })),
         { slug: "web-development" },
+        { slug: "mobile-app-development" },
     ];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
+
+    // Specific SEO Recommendations from SEO Content Document for Mobile App Development
+    if (slug === "mobile-app-development") {
+        return {
+            title: "Mobile App Development UK | Phoenix Creative Hub",
+            description: "Plan a mobile app around your users and business goals. Phoenix Creative Hub helps UK organisations scope iOS, Android and cross-platform app projects.",
+            keywords: [
+                "Mobile app development company UK",
+                "app development company UK",
+                "iOS app development UK",
+                "Android app development UK",
+                "cross-platform app development UK",
+                "custom mobile app development",
+                "Phoenix Creative Hub UK",
+            ],
+            alternates: {
+                canonical: `https://phoenixcreativehub.co.uk/services/mobile-app-development`,
+            },
+            openGraph: {
+                title: "Mobile App Development UK | Phoenix Creative Hub",
+                description: "Plan a mobile app around your users and business goals. Phoenix Creative Hub helps UK organisations scope iOS, Android and cross-platform app projects.",
+                url: `https://phoenixcreativehub.co.uk/services/mobile-app-development`,
+                siteName: "Phoenix Creative Hub UK",
+                images: [{
+                    url: "https://phoenixcreativehub.co.uk/images/logo-black.png",
+                    width: 1200,
+                    height: 630,
+                    alt: "Mobile App Development UK - Phoenix Creative Hub",
+                }],
+                locale: "en_GB",
+                type: "article",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Mobile App Development UK | Phoenix Creative Hub",
+                description: "Plan a mobile app around your users and business goals. Phoenix Creative Hub helps UK organisations scope iOS, Android and cross-platform app projects.",
+                images: ["https://phoenixcreativehub.co.uk/images/logo-black.png"],
+            },
+        };
+    }
 
     // Specific SEO Recommendations from SEO Content Document for Web Development
     if (slug === "web-development" || slug === "web-mobile-development") {
@@ -130,6 +172,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ServiceDetailPage({ params }: Props) {
     const { slug } = await params;
+
+    if (slug === "mobile-app-development") {
+        const matchingService = services.find((s) => s.slug === "web-mobile-development");
+        return <MobileAppDetailClient service={matchingService || services[0]} />;
+    }
 
     if (slug === "web-development" || slug === "web-mobile-development") {
         const matchingService = services.find((s) => s.slug === "web-mobile-development");
