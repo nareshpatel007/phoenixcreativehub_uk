@@ -5,11 +5,10 @@ import { motion, useInView } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import {
-    Laptop, Smartphone, Bot, Database, Cloud, Activity,
-    Shield, Zap, Users, ArrowRight, CheckCircle2, Star,
-    ChevronRight, Award, HelpCircle, Code2, Globe, Heart,
-    Sparkles, Send, MessageSquare, Terminal, Server, Layers,
-    Mail, Phone, Search, MapPin, Cpu, TrendingUp, Check, ExternalLink
+    Laptop, Smartphone, Bot, Database, Globe, Search,
+    Shield, Zap, Users, ArrowRight, CheckCircle2,
+    ChevronRight, Award, Send, Phone, Mail, MapPin,
+    Check, Sparkles, Layers, Compass, BarChart3, HelpCircle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -43,14 +42,6 @@ const fadeUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } },
 };
-const fadeLeft = {
-    hidden: { opacity: 0, x: -30 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } },
-};
-const fadeRight = {
-    hidden: { opacity: 0, x: 30 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } },
-};
 const stagger = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
@@ -73,12 +64,11 @@ function TechHeroBackground() {
             <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                     <pattern id="hero-grid" width="60" height="60" patternUnits="userSpaceOnUse">
-                        <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(41,171,226,0.06)" strokeWidth="1" />
+                        <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(154,205,50,0.06)" strokeWidth="1" />
                     </pattern>
                 </defs>
                 <rect width="100%" height="100%" fill="url(#hero-grid)" />
 
-                {/* Cyber/Tech flow lines */}
                 {[
                     "M 0 150 L 150 150 L 200 200 L 400 200 L 450 150 L 800 150",
                     "M 0 300 L 100 300 L 140 260 L 600 260 L 640 300 L 1000 300",
@@ -99,7 +89,6 @@ function TechHeroBackground() {
                 ))}
             </svg>
 
-            {/* Glowing orbs */}
             <div className="absolute top-0 right-1/4 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[130px] -translate-y-1/3" />
             <div className="absolute bottom-0 left-1/4 w-[450px] h-[450px] rounded-full bg-[#111111]/20 blur-[100px] translate-y-1/3" />
         </div>
@@ -107,7 +96,7 @@ function TechHeroBackground() {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   HOME PAGE
+   HOME PAGE - SEO DOCUMENT CONTENT
 ═══════════════════════════════════════════════════════════════════════════ */
 export default function HomeClient() {
     const [formSubmitted, setFormSubmitted] = useState(false);
@@ -137,7 +126,6 @@ export default function HomeClient() {
 
             {/* 1. HERO SECTION */}
             <section className="relative flex items-center pt-28 sm:pt-36 pb-20 overflow-hidden bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1A1A1A] text-white">
-                {/* Premium animated background effects */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
                     <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-[#9ACD32]/20 via-[#9ACD32]/5 to-transparent rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2 animate-pulse" />
                     <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#9ACD32]/10 via-transparent rounded-full blur-[120px] translate-y-1/3 -translate-x-1/3" />
@@ -164,20 +152,22 @@ export default function HomeClient() {
                                 </span>
                             </motion.div>
 
-                            <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl xl:text-6xl font-display font-extrabold leading-[1.08] tracking-tight text-white">
-                                Phoenix Creative Hub UK <span className="inline text-[#9ACD32]">Custom Software &amp; Mobile App Development Company</span>
+                            {/* Main H1 Heading as per SEO Document */}
+                            <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl xl:text-6xl font-display font-extrabold leading-[1.1] tracking-tight text-white">
+                                Software Development and Digital Growth for <span className="text-[#9ACD32]">Ambitious UK Businesses</span>
                             </motion.h1>
 
+                            {/* Introductory Copy as per SEO Document */}
                             <motion.p variants={fadeUp} className="text-lg text-slate-300 leading-relaxed max-w-2xl">
-                                PHOENIX CREATIVE HUB UK LTD is a leading software engineering and digital technology company based in London, UK (Suite RA01, 195–197 Wood Street, London, E17 3NU). We empower businesses globally with scalable, secure, and future-ready digital architectures.
+                                Technology should make it easier to run your business, serve customers and achieve your next stage of growth. Phoenix Creative Hub brings software development and digital growth services together, helping businesses turn ideas into useful digital solutions and improve how they reach customers online.
                             </motion.p>
 
                             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 pt-2">
                                 <Button size="lg" asChild className="bg-gradient-to-r from-[#9ACD32] to-[#7da828] hover:from-[#9ACD32]/90 hover:to-[#7da828]/90 text-[#0B2921] font-bold h-13 px-8 text-base shadow-[0_0_30px_rgba(154,205,50,0.4)] hover:shadow-[0_0_40px_rgba(154,205,50,0.6)] rounded-full transition-all border border-[#9ACD32]/20">
-                                    <Link href="#quote">Get Started <ArrowRight className="w-5 h-5 ml-2" /></Link>
+                                    <Link href="#quote">Discuss Your Project <ArrowRight className="w-5 h-5 ml-2" /></Link>
                                 </Button>
                                 <Button size="lg" variant="outline" asChild className="border-white/30 text-white hover:bg-white/10 hover:border-white/50 font-semibold h-13 px-8 text-base rounded-full backdrop-blur-sm transition-all">
-                                    <Link href="/services">Explore Services</Link>
+                                    <Link href="#services">Explore Services</Link>
                                 </Button>
                             </motion.div>
 
@@ -187,10 +177,10 @@ export default function HomeClient() {
                                 className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-white/10"
                             >
                                 {[
+                                    { val: "UK-Focused", label: "Software & SEO" },
                                     { val: "100+", label: "Projects Shipped" },
-                                    { val: "AI-First", label: "Engineering Team" },
-                                    { val: "8+", label: "Years Experience" },
-                                    { val: "98%", label: "Client Retainers" }
+                                    { val: "London", label: "E17 Headquarters" },
+                                    { val: "Zero", label: "Outsourcing Policy" }
                                 ].map((stat, i) => (
                                     <div key={i} className="space-y-1 group">
                                         <div className="text-2xl md:text-3xl font-display font-extrabold text-[#9ACD32] group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_10px_rgba(154,205,50,0.3)]">{stat.val}</div>
@@ -200,7 +190,7 @@ export default function HomeClient() {
                             </motion.div>
                         </motion.div>
 
-                        {/* Right Decorative Creative 3D Showcase */}
+                        {/* Right Creative Showcase */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95, y: 20 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -208,22 +198,19 @@ export default function HomeClient() {
                             className="lg:col-span-5 hidden lg:block"
                         >
                             <div className="relative group">
-                                {/* Ambient back glow */}
                                 <div className="absolute -inset-4 bg-gradient-to-r from-[#9ACD32]/25 via-[#9ACD32]/10 to-[#9ACD32]/20 rounded-3xl blur-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
-                                {/* Container with creative image & overlay */}
                                 <div className="relative rounded-3xl border border-white/10 bg-slate-900/60 backdrop-blur-xl p-4 shadow-[0_20px_60px_rgba(0,0,0,0.5)] overflow-hidden">
                                     <div className="relative h-[420px] w-full rounded-2xl overflow-hidden flex items-center justify-center">
                                         <Image
                                             src="/images/hero-creative.png"
-                                            alt="Phoenix Creative Hub UK Digital & App Development Solutions"
+                                            alt="Phoenix Creative Hub UK Digital Software and SEO Growth Solutions"
                                             fill
                                             className="object-cover group-hover:scale-105 transition-transform duration-700"
                                             priority
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-[#0B2921]/90 via-transparent to-transparent pointer-events-none" />
 
-                                        {/* Floating Badge on Bottom */}
                                         <div className="absolute bottom-4 left-4 right-4 bg-[#0B2921]/90 backdrop-blur-md border border-white/10 rounded-2xl p-3.5 flex items-center justify-between text-xs">
                                             <div className="flex items-center gap-2.5">
                                                 <div className="w-2.5 h-2.5 rounded-full bg-[#9ACD32] animate-ping" />
@@ -241,61 +228,89 @@ export default function HomeClient() {
                 </div>
             </section>
 
-            {/* 2. CORE SERVICES SECTION */}
+            {/* 2. A PRACTICAL PARTNER FOR TECHNOLOGY AND ONLINE GROWTH */}
+            <section className="py-20 bg-white border-b border-slate-100">
+                <div className="section-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <InViewSection>
+                        <div className="max-w-4xl mx-auto text-center space-y-4">
+                            <span className="inline-flex items-center gap-2 bg-[#9ACD32]/15 border border-[#9ACD32]/30 text-[#5a8014] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
+                                Pragmatic Digital Execution
+                            </span>
+                            <h2 className="text-3xl md:text-4xl font-display font-extrabold text-[#0B2921] tracking-tight">
+                                A Practical Partner for Technology and Online Growth
+                            </h2>
+                            <p className="text-slate-600 text-lg leading-relaxed pt-2">
+                                Whether you are planning a new digital product, replacing a manual process, improving an existing platform or looking to attract more customers through search, the first step is understanding what your business needs to achieve. We take time to understand the challenge, the people who will use the solution and the outcome that matters before recommending a way forward.
+                            </p>
+                        </div>
+                    </InViewSection>
+                </div>
+            </section>
+
+            {/* 3. CORE SERVICES - SOFTWARE DEVELOPMENT BUILT AROUND YOUR BUSINESS */}
             <section id="services" className="py-28 bg-[#fbfdfa] relative overflow-hidden">
-                {/* Decorative background subtle glow */}
                 <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#9ACD32]/5 rounded-full blur-3xl pointer-events-none" />
                 <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#0B2921]/5 rounded-full blur-3xl pointer-events-none" />
 
                 <div className="section-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <InViewSection>
-                        <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
+                        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
                             <span className="inline-flex items-center gap-2 bg-[#9ACD32]/15 border border-[#9ACD32]/30 text-[#5a8014] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-sm">
-                                What We Deliver
+                                Core Capabilities
                             </span>
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-[#0B2921] tracking-tight">
-                                End-to-End IT Engineering Services
+                                Software Development Built Around Your Business
                             </h2>
                             <p className="text-slate-600 text-lg leading-relaxed">
-                                We combine robust technical execution with industry best practices to build products that scale seamlessly.
+                                Off-the-shelf tools can be a good starting point, but they may not always fit the way your organisation works. Our custom software development service is focused on creating digital systems around your processes, users and operational requirements. From an initial concept to an established platform that needs improving, we help shape a practical development approach.
                             </p>
                         </div>
                     </InViewSection>
 
                     <InViewSection>
-                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
                             {[
                                 {
                                     icon: Laptop,
-                                    title: "Custom Software Development",
+                                    title: "Custom software development",
                                     slug: "custom-software-development",
-                                    desc: "Tailored web architectures and robust backend services engineered precisely for your business challenges.",
-                                    features: ["Enterprise Architecture", "High-Performance APIs", "Scalable Microservices"],
-                                    tag: "Custom Solutions"
+                                    desc: "Plan and build software around your workflows, business rules and future requirements. Discuss your objectives, essential features, integrations and support needs with our team.",
+                                    tag: "Tailored Architecture"
+                                },
+                                {
+                                    icon: Globe,
+                                    title: "Web development",
+                                    slug: "web-mobile-development",
+                                    desc: "Create a business website or web application that gives visitors a clear experience and supports your commercial goals. We consider structure, usability, performance, accessibility and the actions you want users to take.",
+                                    tag: "High Performance"
                                 },
                                 {
                                     icon: Smartphone,
-                                    title: "Web & Mobile Applications",
+                                    title: "Mobile app development",
                                     slug: "web-mobile-development",
-                                    desc: "Stunning high-performance websites and native iOS & Android applications using Next.js and React Native.",
-                                    features: ["iOS & Android Native", "Next.js High Performance", "Responsive Web Apps"],
-                                    tag: "Mobile & Web"
+                                    desc: "Develop mobile experiences that help customers, employees or partners complete tasks wherever they are. We can discuss the right approach for iOS, Android or cross-platform requirements based on your audience and product scope.",
+                                    tag: "iOS & Android"
                                 },
                                 {
                                     icon: Bot,
-                                    title: "AI Automation & ML",
+                                    title: "AI development and automation",
                                     slug: "ai-automation-ml",
-                                    desc: "Intelligent agents, predictive modeling, data scraping, and automation flows integrating the latest LLM models.",
-                                    features: ["Intelligent AI Agents", "Workflow Automation", "Predictive Analytics"],
-                                    tag: "AI & Automation"
+                                    desc: "Explore where artificial intelligence and workflow automation could reduce repetitive work, support faster decisions or improve customer interactions. We start with a defined business problem rather than adding AI for its own sake.",
+                                    tag: "Practical AI"
                                 },
                                 {
                                     icon: Database,
-                                    title: "CRM & ERP Systems",
+                                    title: "CRM and ERP development",
                                     slug: "crm-erp-systems",
-                                    desc: "Streamlined operational workflows, customized administrative panels, and secure corporate management platforms.",
-                                    features: ["Workflow Automation", "Centralised Dashboards", "Role-Based Security"],
-                                    tag: "Enterprise Platforms"
+                                    desc: "Make business information and processes easier to manage with CRM and ERP solutions shaped around the way your teams work. Discuss customer management, operational workflows, reporting and system integration requirements.",
+                                    tag: "Operational Platforms"
+                                },
+                                {
+                                    icon: Search,
+                                    title: "SEO services",
+                                    slug: "custom-software-development",
+                                    desc: "Help the right people find your business through search. Our SEO work can include technical improvements, on-page optimisation, keyword and content planning, local search and performance measurement, with priorities based on your website and commercial objectives.",
+                                    tag: "Search-Led Growth"
                                 },
                             ].map((service, i) => (
                                 <motion.div
@@ -303,11 +318,9 @@ export default function HomeClient() {
                                     variants={fadeUp}
                                     className="group relative bg-white rounded-3xl border border-slate-200/80 p-7 flex flex-col justify-between h-full transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(11,41,33,0.08)] hover:border-[#9ACD32] overflow-hidden"
                                 >
-                                    {/* Top subtle corner gradient */}
                                     <div className="absolute -right-8 -top-8 w-28 h-28 rounded-full bg-gradient-to-br from-[#9ACD32]/10 to-transparent blur-xl group-hover:scale-150 transition-transform duration-500 pointer-events-none" />
 
                                     <div>
-                                        {/* Icon & Category Tag Header */}
                                         <div className="flex items-center justify-between mb-6">
                                             <div className="w-14 h-14 bg-[#0B2921]/5 group-hover:bg-[#0B2921] rounded-2xl flex items-center justify-center border border-[#0B2921]/10 group-hover:border-[#0B2921] group-hover:scale-105 transition-all duration-300 shadow-sm">
                                                 <service.icon className="w-7 h-7 text-[#0B2921] group-hover:text-[#9ACD32] transition-colors duration-300" />
@@ -323,23 +336,13 @@ export default function HomeClient() {
                                         <p className="text-slate-600 text-sm leading-relaxed mb-6">
                                             {service.desc}
                                         </p>
-
-                                        {/* Bullet features for enhanced substance */}
-                                        <div className="space-y-2 mb-6 pt-4 border-t border-slate-100">
-                                            {service.features.map((feat, fIdx) => (
-                                                <div key={fIdx} className="flex items-center gap-2 text-xs text-slate-600 font-medium">
-                                                    <div className="w-1.5 h-1.5 rounded-full bg-[#9ACD32]" />
-                                                    <span>{feat}</span>
-                                                </div>
-                                            ))}
-                                        </div>
                                     </div>
 
                                     <Link
-                                        href={`/services/${service.slug}`}
+                                        href={service.slug ? `/services/${service.slug}` : "/services"}
                                         className="inline-flex items-center justify-between w-full pt-4 border-t border-slate-100 text-xs font-bold text-[#0B2921] group-hover:text-[#5a8014] transition-colors"
                                     >
-                                        <span>Request details</span>
+                                        <span>Discuss requirements</span>
                                         <span className="w-7 h-7 rounded-full bg-slate-100 group-hover:bg-[#9ACD32] flex items-center justify-center text-[#0B2921] group-hover:text-[#0B2921] transition-all">
                                             <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
                                         </span>
@@ -351,121 +354,107 @@ export default function HomeClient() {
                 </div>
             </section>
 
-            {/* 3. TECH STACK SECTION */}
-            <section className="py-24 bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1A1A1A] text-white relative overflow-hidden">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#9ACD32]/5 blur-[140px] pointer-events-none" />
-                <div className="section-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            {/* 4. A CLEAR PROCESS FROM FIRST CONVERSATION TO DELIVERY */}
+            <section className="py-24 bg-white border-y border-slate-100">
+                <div className="section-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <InViewSection>
                         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                            <span className="inline-flex items-center gap-2 bg-[#9ACD32]/10 border border-[#9ACD32]/20 text-[#9ACD32] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
-                                Built to Last
+                            <span className="inline-flex items-center gap-2 bg-[#9ACD32]/15 border border-[#9ACD32]/30 text-[#5a8014] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
+                                How We Work
                             </span>
-                            <h2 className="text-3xl md:text-4xl font-display font-extrabold">
-                                Our Modern Technology Stack
+                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-[#0B2921] tracking-tight">
+                                A Clear Process from First Conversation to Delivery
                             </h2>
-                            <p className="text-slate-300 text-base">
-                                We build using state-of-the-art tech platforms to guarantee speed, modularity, and security.
+                            <p className="text-slate-600 text-lg leading-relaxed">
+                                Good projects begin with shared expectations. We work through the business challenge, define the scope, agree priorities and identify the decisions needed to move forward. During delivery, communication and review points help keep the work aligned with the agreed objectives. The exact stages depend on the size and nature of your project.
                             </p>
                         </div>
                     </InViewSection>
 
                     <InViewSection>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+                        <div className="grid md:grid-cols-3 gap-8">
                             {[
-                                { name: "React / Next.js", icon: Code2, desc: "High Performance Web UI" },
-                                { name: "Node.js / Express", icon: Server, desc: "Scalable APIs & Systems" },
-                                { name: "TypeScript", icon: Terminal, desc: "Strictly Typed Engineering" },
-                                { name: "PostgreSQL", icon: Database, desc: "Robust Relational Storage" },
-                                { name: "Docker / K8s", icon: Layers, desc: "Standardized Container Ops" },
-                                { name: "Cloud Architectures", icon: Cloud, desc: "AWS / Google Cloud Platforms" }
-                            ].map((tech, i) => (
-                                <motion.div
-                                    key={i}
-                                    variants={fadeUp}
-                                    className="flex flex-col items-center text-center p-6 rounded-2xl border border-slate-800 bg-slate-950/40 hover:border-[#9ACD32]/30 hover:shadow-md transition-all group"
-                                    whileHover={{ y: -4 }}
-                                >
-                                    <div className="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center mb-4 text-[#9ACD32] border border-slate-800 group-hover:border-[#9ACD32]/20 transition-all">
-                                        <tech.icon className="w-6 h-6" />
+                                {
+                                    step: "1",
+                                    title: "1. Understand the brief",
+                                    desc: "Tell us what you want to improve, build or achieve. We will discuss your users, current systems, constraints, timings and measures of success.",
+                                    icon: Compass,
+                                },
+                                {
+                                    step: "2",
+                                    title: "2. Define a suitable approach",
+                                    desc: "We help clarify the requirements, identify priorities and outline a practical route forward. Where appropriate, this may include phased delivery so that the most important needs are addressed first.",
+                                    icon: Layers,
+                                },
+                                {
+                                    step: "3",
+                                    title: "3. Build, review and improve",
+                                    desc: "Work progresses against the agreed scope, with opportunities to review key decisions and provide feedback. We aim to make the process understandable, collaborative and focused on the intended outcome.",
+                                    icon: BarChart3,
+                                },
+                            ].map((process, i) => (
+                                <div key={i} className="relative bg-slate-50 rounded-3xl p-8 border border-slate-200/80 hover:border-[#9ACD32]/40 transition-all duration-300 flex flex-col justify-between">
+                                    <div>
+                                        <div className="flex items-center justify-between mb-6">
+                                            <span className="w-12 h-12 rounded-2xl bg-[#0B2921] text-[#9ACD32] font-display font-black text-xl flex items-center justify-center shadow-md">
+                                                {process.step}
+                                            </span>
+                                            <process.icon className="w-6 h-6 text-[#5a8014]" />
+                                        </div>
+                                        <h3 className="text-xl font-display font-bold text-[#0B2921] mb-3">
+                                            {process.title}
+                                        </h3>
+                                        <p className="text-slate-600 text-sm leading-relaxed">
+                                            {process.desc}
+                                        </p>
                                     </div>
-                                    <div className="font-display font-bold text-sm text-slate-100">{tech.name}</div>
-                                    <div className="text-[10px] text-slate-500 mt-1 uppercase font-semibold tracking-wider">{tech.desc}</div>
-                                </motion.div>
+                                </div>
                             ))}
                         </div>
                     </InViewSection>
                 </div>
             </section>
 
-            {/* 4. WHY CHOOSE US SECTION */}
-            <section className="py-28 bg-slate-50 relative overflow-hidden">
+            {/* 5. WORKING WITH BUSINESSES ACROSS THE UK */}
+            <section className="py-20 bg-slate-900 text-white relative overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(154,205,50,0.15),transparent_60%)] pointer-events-none" />
                 <div className="section-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
-                        <InViewSection>
-                            <div className="space-y-6">
-                                <span className="inline-flex items-center gap-2 bg-[#9ACD32]/10 border border-[#9ACD32]/20 text-[#9ACD32] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
-                                    The Phoenix Creative Advantage
+                    <InViewSection>
+                        <div className="grid lg:grid-cols-12 gap-12 items-center">
+                            <div className="lg:col-span-8 space-y-4">
+                                <span className="inline-flex items-center gap-2 bg-[#9ACD32]/20 border border-[#9ACD32]/30 text-[#9ACD32] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
+                                    UK-Wide Coverage
                                 </span>
-                                <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-[#111111] tracking-tight">
-                                    Engineered for Teams That Require Polish & Pace
+                                <h2 className="text-3xl md:text-4xl font-display font-extrabold tracking-tight">
+                                    Working with Businesses Across the UK
                                 </h2>
-                                <p className="text-slate-600 text-lg leading-relaxed">
-                                    We reject outsourcing and generic templates. Every line of code is produced by our verified, in-house technical team in London, ensuring complete accountability.
+                                <p className="text-slate-300 text-lg leading-relaxed max-w-3xl">
+                                    Phoenix Creative Hub is focused on supporting UK businesses, including organisations in <span className="text-[#9ACD32] font-semibold">London</span>, <span className="text-[#9ACD32] font-semibold">Manchester</span> and <span className="text-[#9ACD32] font-semibold">Birmingham</span>. If your team is based elsewhere in the UK, you can still get in touch to discuss your requirements. We will confirm the most suitable way to work together during the initial conversation.
                                 </p>
-                                <div className="space-y-4 pt-4">
-                                    {[
-                                        { title: "Strict Zero-Outsourcing Policy", desc: "No white-label third parties. You interact directly with the engineers designing your systems." },
-                                        { title: "Long-Term Engineering Partnerships", desc: "Over 40% of our enterprise clients sign multi-year retainers to continuously optimize product suites." }
-                                    ].map((item, i) => (
-                                        <div key={i} className="flex gap-4">
-                                            <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 shrink-0 mt-1">
-                                                <CheckCircle2 className="w-4 h-4" />
-                                            </div>
-                                            <div>
-                                                <h4 className="font-bold text-[#111111] text-base">{item.title}</h4>
-                                                <p className="text-slate-600 text-sm mt-0.5">{item.desc}</p>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
                             </div>
-                        </InViewSection>
-
-                        <InViewSection>
-                            <div className="grid sm:grid-cols-2 gap-6">
-                                {[
-                                    { icon: Shield, title: "Enterprise Security", desc: "Compliant and highly protected codebases." },
-                                    { icon: Zap, title: "Agile Development", desc: "Iterative builds and rapid prototyping cycles." },
-                                    { icon: Users, title: "Dedicated Pods", desc: "Assigned engineers exclusively committed to your stack." },
-                                    { icon: Award, title: "Proven Quality", desc: "Strict QA testing flows before deployment." }
-                                ].map((feat, i) => (
-                                    <div key={i} className="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm hover:border-[#9ACD32]/30 transition-all duration-300">
-                                        <div className="w-10 h-10 bg-primary/5 rounded-xl flex items-center justify-center mb-4 text-primary">
-                                            <feat.icon className="w-5 h-5" />
-                                        </div>
-                                        <h3 className="font-display font-bold text-[#111111] text-base mb-1">{feat.title}</h3>
-                                        <p className="text-slate-600 text-xs leading-relaxed">{feat.desc}</p>
-                                    </div>
-                                ))}
+                            <div className="lg:col-span-4 flex lg:justify-end">
+                                <Button asChild size="lg" className="bg-[#9ACD32] hover:bg-[#9ACD32]/90 text-[#0B2921] font-bold px-8 h-13 rounded-full shadow-[0_0_25px_rgba(154,205,50,0.4)]">
+                                    <Link href="/contact">Contact Our UK Team <ArrowRight className="w-5 h-5 ml-2" /></Link>
+                                </Button>
                             </div>
-                        </InViewSection>
-                    </div>
+                        </div>
+                    </InViewSection>
                 </div>
             </section>
 
-            {/* 5. SUCCESS STORIES */}
-            <section className="py-28 bg-white border-y border-slate-100">
+            {/* 6. CASE STUDIES / IMPACT */}
+            <section className="py-24 bg-white border-b border-slate-100">
                 <div className="section-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <InViewSection>
-                        <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-                            <span className="inline-flex items-center gap-2 bg-[#9ACD32]/10 border border-[#9ACD32]/20 text-[#9ACD32] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
-                                Case Studies
+                        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                            <span className="inline-flex items-center gap-2 bg-[#9ACD32]/10 border border-[#9ACD32]/20 text-[#5a8014] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
+                                Proven Results
                             </span>
-                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-[#111111] tracking-tight">
+                            <h2 className="text-3xl md:text-4xl font-display font-extrabold text-[#0B2921] tracking-tight">
                                 Built for Real-World Impact
                             </h2>
                             <p className="text-slate-600 text-base">
-                                Explore how our technical implementations helped teams solve scaling hurdles and enhance platform security.
+                                Explore how our technical implementations helped teams solve scaling hurdles, improve online performance, and automate operations.
                             </p>
                         </div>
                     </InViewSection>
@@ -490,7 +479,7 @@ export default function HomeClient() {
                                         </div>
                                     </div>
                                     <div className="p-8 flex flex-col flex-grow">
-                                        <h3 className="text-xl font-display font-bold text-[#111111] mb-3 group-hover:text-primary transition-colors">
+                                        <h3 className="text-xl font-display font-bold text-[#111111] mb-3 group-hover:text-[#5a8014] transition-colors">
                                             {project.title}
                                         </h3>
                                         <p className="text-slate-600 text-sm leading-relaxed mb-4 flex-grow">
@@ -499,7 +488,7 @@ export default function HomeClient() {
                                     </div>
                                     <div className="px-8 pb-8 pt-4 border-t border-slate-50 flex items-center justify-between text-xs font-bold text-slate-500">
                                         <span>{project.stats}</span>
-                                        <Link href={`/portfolio/${project.slug}`} className="text-primary group-hover:translate-x-1 transition-transform flex items-center gap-1">
+                                        <Link href={`/portfolio/${project.slug}`} className="text-[#5a8014] font-semibold group-hover:translate-x-1 transition-transform flex items-center gap-1">
                                             View Project <ChevronRight className="w-4 h-4" />
                                         </Link>
                                     </div>
@@ -507,20 +496,71 @@ export default function HomeClient() {
                             ))}
                         </div>
                     </InViewSection>
+                </div>
+            </section>
+
+            {/* 7. FREQUENTLY ASKED QUESTIONS (Direct from SEO Document) */}
+            <section className="py-24 bg-[#fbfdfa] border-b border-slate-100">
+                <div className="section-container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <InViewSection>
+                        <div className="text-center mb-16 space-y-4">
+                            <span className="inline-flex items-center gap-2 bg-[#9ACD32]/15 border border-[#9ACD32]/30 text-[#5a8014] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
+                                Clear Answers
+                            </span>
+                            <h2 className="text-3xl md:text-4xl font-display font-extrabold text-[#0B2921] tracking-tight">
+                                Frequently Asked Questions
+                            </h2>
+                            <p className="text-slate-600 text-base">
+                                Common questions about working with Phoenix Creative Hub on software, digital products and search visibility.
+                            </p>
+                        </div>
+                    </InViewSection>
 
                     <InViewSection>
-                        <div className="text-center pt-12">
-                            <Button size="lg" asChild variant="outline" className="border-[#9ACD32]/30 text-[#9ACD32] hover:bg-[#9ACD32]/10 hover:border-[#9ACD32]/50 font-semibold h-13 px-8 text-base rounded-full transition-all">
-                                <Link href="/portfolio">View All Projects <ArrowRight className="w-5 h-5 ml-2" /></Link>
-                            </Button>
-                        </div>
+                        <Accordion type="single" collapsible className="w-full space-y-4">
+                            {[
+                                {
+                                    q: "What services does Phoenix Creative Hub provide?",
+                                    a: "We provide custom software development, web development, mobile app development, AI development and automation, CRM and ERP development, and SEO services. The right combination depends on your business objectives and project requirements."
+                                },
+                                {
+                                    q: "Do you work with start-ups and established businesses?",
+                                    a: "We welcome enquiries from businesses at different stages, from start-ups planning a first product to established organisations looking to improve systems, applications or online visibility. Project suitability depends on the requirements and scope."
+                                },
+                                {
+                                    q: "Can I enquire about more than one service?",
+                                    a: "Yes. Some projects involve connected requirements, such as a web application with CRM integration or a new website supported by SEO. Tell us about the wider goal so we can understand how the services may fit together."
+                                },
+                                {
+                                    q: "Do you work with businesses outside London?",
+                                    a: "Our target market includes businesses in London, Manchester, Birmingham and across the UK. Contact us to discuss your location and preferred working arrangements."
+                                },
+                                {
+                                    q: "How do I get started?",
+                                    a: "Use the contact form to outline your project, current challenge, timescale and any relevant requirements. We can then arrange an initial discussion to understand the opportunity."
+                                }
+                            ].map((faq, idx) => (
+                                <AccordionItem
+                                    key={idx}
+                                    value={`faq-${idx}`}
+                                    className="bg-white rounded-2xl border border-slate-200/80 px-6 py-2 shadow-sm data-[state=open]:border-[#9ACD32]"
+                                >
+                                    <AccordionTrigger className="text-left font-display font-bold text-[#0B2921] text-base hover:no-underline hover:text-[#5a8014]">
+                                        {faq.q}
+                                    </AccordionTrigger>
+                                    <AccordionContent className="text-slate-600 text-sm leading-relaxed pt-2 pb-4">
+                                        {faq.a}
+                                    </AccordionContent>
+                                </AccordionItem>
+                            ))}
+                        </Accordion>
                     </InViewSection>
                 </div>
             </section>
 
-            {/* 7. PREMIUM CONTACT / QUOTE SECTION */}
+            {/* 8. ENQUIRY / LET'S DISCUSS WHAT YOUR BUSINESS NEEDS NEXT */}
             <section id="quote" className="py-28 bg-[#111111] text-white relative overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(41,171,226,0.15),transparent_70%)] pointer-events-none" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(154,205,50,0.15),transparent_70%)] pointer-events-none" />
 
                 <div className="section-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="grid lg:grid-cols-12 gap-16 items-start">
@@ -529,13 +569,16 @@ export default function HomeClient() {
                             <InViewSection>
                                 <div className="space-y-4">
                                     <span className="inline-flex items-center gap-2 bg-[#9ACD32]/20 border border-[#9ACD32]/30 text-[#9ACD32] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
-                                        Get In Touch
+                                        Start a Conversation
                                     </span>
                                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold tracking-tight">
-                                        Let's Build Something Great
+                                        Let's Discuss What Your Business Needs Next
                                     </h2>
                                     <p className="text-slate-300 text-base leading-relaxed">
-                                        Ready to transform your business with custom software solutions? Our team is here to help you achieve your goals.
+                                        You may have a detailed specification, an early-stage idea or a website that is not delivering the results you expect. Share the challenge with us and we can discuss the next sensible step. There is no need to have every technical detail worked out before making an enquiry.
+                                    </p>
+                                    <p className="text-slate-400 text-sm leading-relaxed pt-2">
+                                        Discuss your project with Phoenix Creative Hub. Request a consultation or send us an outline of what you want to achieve, and we can arrange a conversation about your requirements.
                                     </p>
                                 </div>
                             </InViewSection>
@@ -545,7 +588,7 @@ export default function HomeClient() {
                                     {[
                                         { icon: Phone, label: "Phone", value: "+44 7833 817034", href: "tel:+447833817034" },
                                         { icon: Mail, label: "Email", value: "hello@phoenixcreativehub.co.uk", href: "mailto:hello@phoenixcreativehub.co.uk" },
-                                        { icon: Globe, label: "Location", value: "Suite RA01, 195-197 Wood Street, London, E17 3NU, UK", href: "#" }
+                                        { icon: Globe, label: "Registered Office", value: "Suite RA01, 195–197 Wood Street, London, E17 3NU, UK", href: "/contact" }
                                     ].map((contact, i) => (
                                         <div key={i} className="flex items-start gap-4">
                                             <div className="w-12 h-12 bg-[#9ACD32]/20 rounded-xl flex items-center justify-center text-[#9ACD32] shrink-0">
@@ -572,9 +615,9 @@ export default function HomeClient() {
                                             <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-5 border border-green-100">
                                                 <CheckCircle2 className="w-8 h-8 text-green-500" />
                                             </div>
-                                            <h3 className="font-display font-bold text-[#111111] text-2xl mb-3">Request Received!</h3>
+                                            <h3 className="font-display font-bold text-[#111111] text-2xl mb-3">Enquiry Received!</h3>
                                             <p className="text-sm text-slate-500 mb-6 max-w-md mx-auto leading-relaxed">
-                                                Our technical team will review your project details and get back to you within 24 hours.
+                                                Thank you for reaching out. We will review your outline and arrange an initial conversation to discuss your requirements.
                                             </p>
                                             <Button onClick={() => setFormSubmitted(false)} className="bg-primary text-white hover:bg-primary/95 rounded-full px-6 h-10">
                                                 Send Another Message
@@ -626,9 +669,11 @@ export default function HomeClient() {
                                                             </FormControl>
                                                             <SelectContent>
                                                                 <SelectItem value="custom_software">Custom Software Development</SelectItem>
-                                                                <SelectItem value="web_mobile">Web & Mobile Applications</SelectItem>
-                                                                <SelectItem value="ai_ml">AI Automation & ML</SelectItem>
-                                                                <SelectItem value="crm_erp">CRM & ERP Systems</SelectItem>
+                                                                <SelectItem value="web_dev">Web Development</SelectItem>
+                                                                <SelectItem value="mobile_dev">Mobile App Development</SelectItem>
+                                                                <SelectItem value="ai_automation">AI Development & Automation</SelectItem>
+                                                                <SelectItem value="crm_erp">CRM & ERP Development</SelectItem>
+                                                                <SelectItem value="seo_growth">SEO & Digital Growth</SelectItem>
                                                                 <SelectItem value="other">Other Inquiry</SelectItem>
                                                             </SelectContent>
                                                         </Select>
@@ -641,7 +686,7 @@ export default function HomeClient() {
                                                         <FormLabel className="text-xs font-semibold text-[#111111]/70 uppercase tracking-wide">Project Details *</FormLabel>
                                                         <FormControl>
                                                             <Textarea
-                                                                placeholder="Please describe your software requirements, user flow, integrations, or deployment timelines..."
+                                                                placeholder="Please outline your project, current challenge, timescale and any relevant requirements..."
                                                                 className="min-h-[120px] resize-none bg-slate-50/50 border-slate-100 rounded-xl"
                                                                 {...field}
                                                             />
@@ -656,10 +701,10 @@ export default function HomeClient() {
                                                     </p>
                                                     <Button
                                                         type="submit"
-                                                        className="bg-primary hover:bg-primary/95 text-white font-bold shadow-lg shadow-primary/25 min-w-[150px] h-11 rounded-full cursor-pointer transition-all"
+                                                        className="bg-primary hover:bg-primary/95 text-white font-bold shadow-lg shadow-primary/25 min-w-[170px] h-11 rounded-full cursor-pointer transition-all"
                                                     >
                                                         <span className="flex items-center gap-2">
-                                                            Send Message <Send className="w-4 h-4" />
+                                                            Send Enquiry <Send className="w-4 h-4" />
                                                         </span>
                                                     </Button>
                                                 </div>

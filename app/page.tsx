@@ -2,24 +2,40 @@ import { Metadata } from 'next'
 import HomeClient from './HomeClient'
 
 export const metadata: Metadata = {
-    title: 'Phoenix Creative Hub UK - Premier Web, Mobile & Software Solutions London',
-    description: 'Premier digital engineering agency in London, UK. Custom web development, iOS & Android mobile apps, bespoke CRM & ERP platforms, and AI automation.',
-    keywords: ['Web Development London', 'Mobile App Development UK', 'Custom Software London', 'CRM ERP Systems', 'AI Automation UK', 'Phoenix Creative Hub UK'],
+    title: 'Software Development & SEO Agency UK | Phoenix Creative',
+    description: 'Build better digital products and grow online with Phoenix Creative Hub. UK-focused software, web, app, AI and SEO services for ambitious businesses.',
+    keywords: [
+        'Software development company UK',
+        'software development agency UK',
+        'custom software development',
+        'web development company UK',
+        'mobile app development UK',
+        'AI development UK',
+        'SEO services UK',
+        'Phoenix Creative Hub UK',
+    ],
     alternates: {
         canonical: 'https://phoenixcreativehub.co.uk',
     },
     openGraph: {
-        title: 'Phoenix Creative Hub UK - Premier Web, Mobile & Software Solutions London',
-        description: 'Premier digital engineering agency in London, UK. Custom web development, iOS & Android mobile apps, bespoke CRM & ERP platforms, and AI automation.',
+        title: 'Software Development & SEO Agency UK | Phoenix Creative',
+        description: 'Build better digital products and grow online with Phoenix Creative Hub. UK-focused software, web, app, AI and SEO services for ambitious businesses.',
         url: 'https://phoenixcreativehub.co.uk',
         siteName: 'Phoenix Creative Hub UK',
         images: [{
             url: 'https://phoenixcreativehub.co.uk/images/logo-black.png',
             width: 1200,
             height: 630,
+            alt: 'Phoenix Creative Hub UK',
         }],
         locale: 'en_GB',
         type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Software Development & SEO Agency UK | Phoenix Creative',
+        description: 'Build better digital products and grow online with Phoenix Creative Hub. UK-focused software, web, app, AI and SEO services for ambitious businesses.',
+        images: ['https://phoenixcreativehub.co.uk/images/logo-black.png'],
     },
 }
 
