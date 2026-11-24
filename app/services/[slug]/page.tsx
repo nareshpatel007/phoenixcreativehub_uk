@@ -3,24 +3,58 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ServiceDetailClient from "./ServiceDetailClient";
 import CustomSoftwareDetailClient from "./CustomSoftwareDetailClient";
+import WebDevelopmentDetailClient from "./WebDevelopmentDetailClient";
 
 interface Props {
     params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
-    return services.map((s) => ({
-        slug: s.slug,
-    }));
+    return [
+        ...services.map((s) => ({ slug: s.slug })),
+        { slug: "web-development" },
+    ];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
-    const service = services.find((s) => s.slug === slug);
 
-    if (!service) {
+    // Specific SEO Recommendations from SEO Content Document for Web Development
+    if (slug === "web-development" || slug === "web-mobile-development") {
         return {
-            title: "Service Not Found",
+            title: "Web Development Company UK | Phoenix Creative Hub",
+            description: "Create a website or web application built around your business goals. Phoenix Creative Hub supports UK organisations with considered web development.",
+            keywords: [
+                "Web development company UK",
+                "website development company UK",
+                "custom web development UK",
+                "web application development",
+                "business website development",
+                "Phoenix Creative Hub UK",
+            ],
+            alternates: {
+                canonical: `https://phoenixcreativehub.co.uk/services/${slug}`,
+            },
+            openGraph: {
+                title: "Web Development Company UK | Phoenix Creative Hub",
+                description: "Create a website or web application built around your business goals. Phoenix Creative Hub supports UK organisations with considered web development.",
+                url: `https://phoenixcreativehub.co.uk/services/${slug}`,
+                siteName: "Phoenix Creative Hub UK",
+                images: [{
+                    url: "https://phoenixcreativehub.co.uk/images/logo-black.png",
+                    width: 1200,
+                    height: 630,
+                    alt: "Web Development Company UK - Phoenix Creative Hub",
+                }],
+                locale: "en_GB",
+                type: "article",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Web Development Company UK | Phoenix Creative Hub",
+                description: "Create a website or web application built around your business goals. Phoenix Creative Hub supports UK organisations with considered web development.",
+                images: ["https://phoenixcreativehub.co.uk/images/logo-black.png"],
+            },
         };
     }
 
@@ -63,6 +97,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         };
     }
 
+    const service = services.find((s) => s.slug === slug);
+
+    if (!service) {
+        return {
+            title: "Service Not Found",
+        };
+    }
+
     return {
         title: `${service.title} | IT Services`,
         description: service.description,
@@ -88,14 +130,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ServiceDetailPage({ params }: Props) {
     const { slug } = await params;
+
+    if (slug === "web-development" || slug === "web-mobile-development") {
+        const matchingService = services.find((s) => s.slug === "web-mobile-development");
+        return <WebDevelopmentDetailClient service={matchingService || services[0]} />;
+    }
+
+    if (slug === "custom-software-development") {
+        const matchingService = services.find((s) => s.slug === "custom-software-development");
+        return <CustomSoftwareDetailClient service={matchingService || services[0]} />;
+    }
+
     const service = services.find((s) => s.slug === slug);
 
     if (!service) {
         notFound();
-    }
-
-    if (slug === "custom-software-development") {
-        return <CustomSoftwareDetailClient service={service} />;
     }
 
     return <ServiceDetailClient service={service} />;
